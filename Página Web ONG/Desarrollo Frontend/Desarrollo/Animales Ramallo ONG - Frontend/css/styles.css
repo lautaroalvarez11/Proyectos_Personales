@@ -1,0 +1,197 @@
+/* css/styles.css
+   Estilos para Página de Inicio - Animales Ramallo
+   Basado en la identidad visual provista. :contentReference[oaicite:1]{index=1}
+*/
+
+/* ---- Variables de color (fáciles de ajustar) ---- */
+:root{
+  --orange-100: #ff8a4a;    /* tono principal */
+  --orange-70:  #ff7a2a;    /* tono secundario */
+  --dark:       #202020;
+  --muted:      #f6f2f2;
+  --card-border: #f0cfc6;
+  --accent:     #f3a33a;
+}
+
+/* Reset básico */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family: "Montserrat", Arial, sans-serif;color:var(--dark);background:#fff}
+
+/* ----- HEADER ----- */
+.site-header{
+  width:100%;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: sticky;
+  top:0;
+  z-index:1000;
+}
+.header-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px;
+  gap:12px;
+}
+
+/* logo */
+.logo img{height:80px; display:block;}
+
+/* nav */
+.main-nav ul{list-style:none; display:flex; gap:30px; align-items:center}
+.main-nav a{color:var(--dark); text-decoration:none; font-weight:600; padding:6px 8px}
+.main-nav a.active{color:var(--orange-100)}
+
+/* header actions: donate + hamburger */
+.header-actions{display:flex; align-items:center; gap:12px}
+.btn-donar{
+  display:inline-block;
+  padding:10px 16px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:6px;
+  font-weight:700;
+  text-decoration:none;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+.btn-donar.small{padding:8px 12px; font-size:14px}
+
+/* hover DONAR: ligero levantamiento y brillo */
+.btn-donar:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(243,163,58,0.18);
+}
+
+/* hamburger mobile */
+.hamburger{
+  display:none;
+  width:38px; height:30px;
+  background:transparent; border:0; cursor:pointer;
+  flex-direction:column; justify-content:space-between;
+  padding:6px;
+}
+.hamburger span{display:block;height:3px;background:#333;border-radius:3px}
+@media (max-width:900px){
+  .main-nav{display:none}
+  .hamburger{display:flex}
+}
+
+/* ----- HERO ----- */
+.hero{
+  background-size: cover;
+  background-position: center;
+  position:relative;
+  /* overlay to keep text readable */
+  color:#fff;
+  padding:70px 18px 40px;
+}
+.hero-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:30px 18px;
+}
+
+/* left column text */
+.hero-left{
+  flex:1 1 540px;
+  max-width:600px;
+  align-self:flex-start;
+}
+.hero-left h1{
+  font-family: "Fredoka One", "Montserrat", sans-serif;
+  font-size:48px;
+  line-height:1.02;
+  margin-bottom:18px;
+  color:#fff;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.12);
+}
+.hero-sub{
+  font-size:16px;
+  margin-bottom:20px;
+  background: rgba(255,255,255,0.06);
+  padding:12px 14px;
+  border-radius:8px;
+  max-width:520px;
+  color: #fff;
+}
+
+/* CTA */
+.btn-primary{
+  display:inline-block;
+  padding:12px 22px;
+  background:#fff;
+  color:var(--dark);
+  border-radius:28px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* right column image */
+.hero-right{flex:0 0 360px; text-align:right}
+.hero-right img{max-width:100%; height:auto; transform: translateY(10px);}
+
+/* optional curved bottom effect */
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-30px;
+  height:60px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--muted) 100%);
+  pointer-events:none;
+}
+
+/* ----- MAIN / ABOUT / CARDS ----- */
+.main{background:var(--muted); padding:70px 18px 80px}
+.about{max-width:1200px;margin:0 auto;text-align:center}
+.about h2{
+  font-family:"Fredoka One", "Montserrat", sans-serif;
+  font-size:32px;
+  margin-bottom:28px;
+  color:var(--dark);
+}
+
+/* cards grid */
+.cards{display:flex; gap:28px; justify-content:center; flex-wrap:wrap}
+.card{
+  background:#fff;
+  width:300px;
+  border-radius:10px;
+  border:2px solid rgba(243,163,58,0.09);
+  padding:24px;
+  text-align:left;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+}
+.card-icon{width:80px; height:80px; margin-bottom:12px}
+.card-icon img{width:100%; height:100%; object-fit:contain}
+.card h3{font-size:18px; margin-bottom:8px; color:var(--dark)}
+.card p{font-size:14px; color:#444; line-height:1.45}
+.card .btn-donar.small{display:inline-block; margin-top:12px}
+
+/* ----- FOOTER ----- */
+.site-footer{background:linear-gradient(90deg,var(--orange-70),var(--orange-100)); padding:12px 18px}
+.footer-inner{max-width:1200px;margin:0 auto;text-align:center;color:#fff;font-weight:600;}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column; align-items:flex-start; padding:24px}
+  .hero-right{align-self:center; order:2; width:240px}
+  .hero-left{order:1}
+  .hero-left h1{font-size:34px}
+  .hero-sub{max-width:100%}
+  .cards{flex-direction:column; align-items:center}
+  .card{width:92%}
+  .btn-donar{padding:9px 12px}
+}
+
+/* small phones */
+@media (max-width:420px){
+  .hero-left h1{font-size:28px}
+  .header-inner{padding:12px}
+}
