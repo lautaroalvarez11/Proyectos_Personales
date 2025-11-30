@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Animales Ramallo - Inicio</title>
 
-  <!-- Tipografías: headings redondeada + sans para texto -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
-  <!-- HEADER / NAV -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">
-        <img src="img/logo ONG.jpg" alt="Logo Animales Ramallo">
+         <img src="img/logo ONG.jpg" alt="Animales Ramallo Logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block'">
+         <span class="logo-text" style="display:none; font-family: 'Fredoka One'; font-size: 24px; color: var(--orange-primary);">AR</span>
       </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
 
       <nav class="main-nav" id="main-nav">
         <ul>
@@ -31,65 +38,85 @@
       </nav>
 
       <div class="header-actions">
-        <a href="#" id="donar-btn" class="btn-donar">DONAR AQUÍ</a>
-        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="#" class="btn-donar">DONAR AQUÍ</a>
       </div>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero" style="background-image: url('img/Inicio/Hero Section.png');">
+  <section class="hero">
     <div class="hero-inner">
       <div class="hero-left">
         <h1>Adoptá amor, salvá vidas</h1>
-        <p class="hero-sub">Cada adopción es una segunda oportunidad. Elegí cambiar una historia: no compres, adoptá. Juntos podemos construir un futuro con más empatía, respeto y corazones felices.</p>
-        <a href="contacto.html" class="btn-primary">Contáctanos</a>
+        <p>Cada adopción es una segunda oportunidad. Elegí cambiar una historia. Juntos podemos construir un futuro con más empatía, respeto y corazones felices.</p>
+        <a href="contacto.html" class="btn-contact">Contáctanos</a>
       </div>
 
       <div class="hero-right">
-        <img src="img/Inicio/Perro Hero Section.png" alt="Perro Hero Section" />
+        <img src="img/Inicio/Perro Hero Section.png" alt="Perro Corgi feliz">
       </div>
     </div>
   </section>
 
-  <!-- SOBRE NOSOTROS / CARDS -->
-  <main class="main">
-    <section class="about">
-      <h2>Un poco sobre nosotros</h2>
+  <!-- MAIN / ABOUT -->
+  <main class="about">
+    <h2>Un poco sobre nosotros</h2>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon"><img src="img/Inicio/Púa.png" alt="Púa"></div>
-          <h3>¿A qué nos dedicamos?</h3>
-          <p>Somos una ONG destinada al rescate y recuperación de animales en situación de calle.</p>
-        </article>
+    <div class="cards-container">
+      
+      <!-- CARD 1 -->
+      <article class="card">
+        <div class="icon-wrapper">
+          <!-- Fondo Mancha -->
+          <img src="img/Inicio/Púa.png" alt="" class="icon-bg">
+          <!-- Icono Perro 1 -->
+          <img src="img/Inicio/Perro púa 1.png" alt="Icono perro" class="icon-dog">
+        </div>
+        <h3>¿A qué nos dedicamos?</h3>
+        <p>Somos una ONG destinada al rescate y recuperación de animales en situación de calle.</p>
+      </article>
 
-        <article class="card">
-          <div class="card-icon"><img src="img/Inicio/Púa.png" alt="Púa"></div>
-          <h3>¿Dónde nos encontrás?</h3>
-          <p>Somos de la ciudad de Ramallo, provincia de Buenos Aires.</p>
-        </article>
+      <!-- CARD 2 -->
+      <article class="card">
+        <div class="icon-wrapper">
+          <!-- Fondo Mancha -->
+          <img src="img/Inicio/Púa.png" alt="" class="icon-bg">
+          <!-- Icono Perro 2 -->
+          <img src="img/Inicio/Perro púa 2.png" alt="Ubicación" class="icon-dog">
+        </div>
+        <h3>¿Dónde nos encontrás?</h3>
+        <p>Somos de la ciudad de Ramallo, provincia de Buenos Aires.</p>
+      </article>
 
-        <article class="card">
-          <div class="card-icon"><img src="img/Inicio/Púa.png" alt="Púa"></div>
-          <h3>Colaborá con nosotros</h3>
-          <p>Podés ayudarnos a seguir cambiando vidas haciendo clic en el siguiente botón.</p>
-          <a href="#" class="btn-donar small">DONAR AQUÍ</a>
-        </article>
-      </div>
-    </section>
+      <!-- CARD 3 (Con botón) -->
+      <article class="card">
+        <div class="icon-wrapper">
+          <!-- Fondo Mancha -->
+          <img src="img/Inicio/Púa.png" alt="" class="icon-bg">
+          <!-- Icono Perro 3 -->
+          <img src="img/Inicio/Perro púa 3.png" alt="Colaborar" class="icon-dog">
+        </div>
+        <h3>Colaborá con nosotros</h3>
+        <p>Podés ayudarnos a seguir cambiando vidas haciendo clic en el siguiente botón.</p>
+        <a href="#" class="btn-donar">DONAR AQUÍ</a>
+      </article>
+
+    </div>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <p>Copyright © 2025 Animales Ramallo | Todos los derechos reservados</p>
-    </div>
+    <p>Copyright © 2025 Animales Ramallo | Todos los derechos reservados</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script>
+    // Script simple para el menú hamburguesa en móvil
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

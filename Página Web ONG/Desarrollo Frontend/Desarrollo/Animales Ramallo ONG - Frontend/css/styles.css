@@ -1,197 +1,357 @@
-/* css/styles.css
-   Estilos para Página de Inicio - Animales Ramallo
-   Basado en la identidad visual provista. :contentReference[oaicite:1]{index=1}
-*/
+/* VARIABLES CSS */
+    :root {
+      --orange-primary: #FE6416;   /* Naranja vibrante principal */
+      --orange-secondary: #EC3215; /* Rojo/Naranja más oscuro */
+      --yellow-accent: #FFC83D;    /* Amarillo para botones */
+      --dark-text: #262626;        /* Negro suave para texto */
+      --white-bg: #F4F0F0;         /* Blanco hueso para fondos claros */
+      --pure-white: #FFFFFF;
+      
+      --font-heading: 'Fredoka One', cursive;
+      --font-body: 'Montserrat', sans-serif;
+    }
 
-/* ---- Variables de color (fáciles de ajustar) ---- */
-:root{
-  --orange-100: #ff8a4a;    /* tono principal */
-  --orange-70:  #ff7a2a;    /* tono secundario */
-  --dark:       #202020;
-  --muted:      #f6f2f2;
-  --card-border: #f0cfc6;
-  --accent:     #f3a33a;
-}
+    /* RESET BÁSICO */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Reset básico */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family: "Montserrat", Arial, sans-serif;color:var(--dark);background:#fff}
+    body {
+      font-family: var(--font-body);
+      color: var(--dark-text);
+      background-color: var(--white-bg);
+      overflow-x: hidden;
+    }
 
-/* ----- HEADER ----- */
-.site-header{
-  width:100%;
-  background: #fff;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  position: sticky;
-  top:0;
-  z-index:1000;
-}
-.header-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:15px;
-  gap:12px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-/* logo */
-.logo img{height:80px; display:block;}
+    ul {
+      list-style: none;
+    }
 
-/* nav */
-.main-nav ul{list-style:none; display:flex; gap:30px; align-items:center}
-.main-nav a{color:var(--dark); text-decoration:none; font-weight:600; padding:6px 8px}
-.main-nav a.active{color:var(--orange-100)}
+    /* --- HEADER / NAV --- */
+    .site-header {
+      background-color: var(--pure-white);
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-/* header actions: donate + hamburger */
-.header-actions{display:flex; align-items:center; gap:12px}
-.btn-donar{
-  display:inline-block;
-  padding:10px 16px;
-  background:var(--accent);
-  color:#fff;
-  border-radius:6px;
-  font-weight:700;
-  text-decoration:none;
-  transition: transform .12s ease, box-shadow .12s ease;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.08);
-}
-.btn-donar.small{padding:8px 12px; font-size:14px}
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
 
-/* hover DONAR: ligero levantamiento y brillo */
-.btn-donar:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(243,163,58,0.18);
-}
+    .logo img {
+      height: 60px; /* Ajuste para que no sea muy grande */
+      width: auto;
+    }
 
-/* hamburger mobile */
-.hamburger{
-  display:none;
-  width:38px; height:30px;
-  background:transparent; border:0; cursor:pointer;
-  flex-direction:column; justify-content:space-between;
-  padding:6px;
-}
-.hamburger span{display:block;height:3px;background:#333;border-radius:3px}
-@media (max-width:900px){
-  .main-nav{display:none}
-  .hamburger{display:flex}
-}
+    .main-nav ul {
+      display: flex;
+      gap: 30px;
+    }
 
-/* ----- HERO ----- */
-.hero{
-  background-size: cover;
-  background-position: center;
-  position:relative;
-  /* overlay to keep text readable */
-  color:#fff;
-  padding:70px 18px 40px;
-}
-.hero-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  gap:30px;
-  padding:30px 18px;
-}
+    .main-nav a {
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-/* left column text */
-.hero-left{
-  flex:1 1 540px;
-  max-width:600px;
-  align-self:flex-start;
-}
-.hero-left h1{
-  font-family: "Fredoka One", "Montserrat", sans-serif;
-  font-size:48px;
-  line-height:1.02;
-  margin-bottom:18px;
-  color:#fff;
-  text-shadow: 0 2px 0 rgba(0,0,0,0.12);
-}
-.hero-sub{
-  font-size:16px;
-  margin-bottom:20px;
-  background: rgba(255,255,255,0.06);
-  padding:12px 14px;
-  border-radius:8px;
-  max-width:520px;
-  color: #fff;
-}
+    .main-nav a:hover, 
+    .main-nav a.active {
+      color: var(--orange-primary);
+    }
 
-/* CTA */
-.btn-primary{
-  display:inline-block;
-  padding:12px 22px;
-  background:#fff;
-  color:var(--dark);
-  border-radius:28px;
-  text-decoration:none;
-  font-weight:700;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-}
+    /* Botón Donar Header */
+    .btn-donar {
+      background-color: var(--yellow-accent);
+      color: var(--pure-white); /* O var(--dark-text) según preferencia de contraste */
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
 
-/* right column image */
-.hero-right{flex:0 0 360px; text-align:right}
-.hero-right img{max-width:100%; height:auto; transform: translateY(10px);}
+    .btn-donar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
 
-/* optional curved bottom effect */
-.hero::after{
-  content:"";
-  position:absolute;
-  left:0; right:0; bottom:-30px;
-  height:60px;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--muted) 100%);
-  pointer-events:none;
-}
+    /* Hamburger menu (oculto en desktop) */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--dark-text);
+      border-radius: 3px;
+    }
 
-/* ----- MAIN / ABOUT / CARDS ----- */
-.main{background:var(--muted); padding:70px 18px 80px}
-.about{max-width:1200px;margin:0 auto;text-align:center}
-.about h2{
-  font-family:"Fredoka One", "Montserrat", sans-serif;
-  font-size:32px;
-  margin-bottom:28px;
-  color:var(--dark);
-}
+    /* --- HERO SECTION --- */
+    .hero {
+      background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), 
+                  url('Hero Section.png');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay; /* Mezcla el color con el patrón */
+      color: var(--pure-white);
+      padding: 60px 20px 100px 20px; /* Padding extra abajo para la curva */
+      position: relative;
+      /* La curva inferior: */
+      border-bottom-left-radius: 50% 40px;
+      border-bottom-right-radius: 50% 40px;
+      overflow: visible; /* Para que la imagen del perro pueda sobresalir */
+    }
 
-/* cards grid */
-.cards{display:flex; gap:28px; justify-content:center; flex-wrap:wrap}
-.card{
-  background:#fff;
-  width:300px;
-  border-radius:10px;
-  border:2px solid rgba(243,163,58,0.09);
-  padding:24px;
-  text-align:left;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.03);
-}
-.card-icon{width:80px; height:80px; margin-bottom:12px}
-.card-icon img{width:100%; height:100%; object-fit:contain}
-.card h3{font-size:18px; margin-bottom:8px; color:var(--dark)}
-.card p{font-size:14px; color:#444; line-height:1.45}
-.card .btn-donar.small{display:inline-block; margin-top:12px}
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
 
-/* ----- FOOTER ----- */
-.site-footer{background:linear-gradient(90deg,var(--orange-70),var(--orange-100)); padding:12px 18px}
-.footer-inner{max-width:1200px;margin:0 auto;text-align:center;color:#fff;font-weight:600;}
+    .hero-left {
+      flex: 1;
+      max-width: 600px;
+    }
 
-/* ----- RESPONSIVE ----- */
-@media (max-width:900px){
-  .hero-inner{flex-direction:column; align-items:flex-start; padding:24px}
-  .hero-right{align-self:center; order:2; width:240px}
-  .hero-left{order:1}
-  .hero-left h1{font-size:34px}
-  .hero-sub{max-width:100%}
-  .cards{flex-direction:column; align-items:center}
-  .card{width:92%}
-  .btn-donar{padding:9px 12px}
-}
+    .hero-left h1 {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-/* small phones */
-@media (max-width:420px){
-  .hero-left h1{font-size:28px}
-  .header-inner{padding:12px}
-}
+    .hero-left p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .btn-contact {
+      background-color: var(--pure-white);
+      color: var(--orange-primary);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 16px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--yellow-accent);
+      color: var(--pure-white);
+    }
+
+    .hero-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .hero-right img {
+      max-width: 100%;
+      height: auto;
+      max-height: 550px; 
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+      margin-bottom: -190px; /* Tira la imagen para abajo */
+      position: relative;
+      z-index: 10;
+    }
+
+    /* --- SECCIÓN SOBRE NOSOTROS (CARDS) --- */
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: var(--white-bg);
+    }
+
+    .about h2 {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: var(--dark-text);
+    }
+
+    .cards-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--pure-white);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Construcción del Icono Compuesto */
+    .icon-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    .icon-dog {
+      position: relative;
+      z-index: 2;
+      width: 60%; /* El perro es más chico que la mancha */
+      height: auto;
+      object-fit: contain;
+    }
+
+    .card h3 {
+      font-family: var(--font-heading); /* O Montserrat Bold */
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: var(--dark-text);
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* Botón específico dentro de la tarjeta */
+    .card .btn-donar {
+      margin-top: auto; /* Empuja el botón al fondo si el texto varía */
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    /* --- FOOTER --- */
+    .site-footer {
+      background-color: var(--orange-primary); /* Puede ser gradiente también */
+      color: var(--pure-white);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    
+    .site-footer p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      /* MÓVIL: Header */
+      .main-nav { display: none; }
+      .header-actions { display: none; }
+
+      .hamburger {
+        display: flex;
+        /* FIX CLAVE: margin-left: auto empuja el elemento al final a la derecha en flexbox */
+        margin-left: auto; 
+      }
+
+      /* MENÚ DESPLEGABLE */
+      .main-nav.active {
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: white;
+          padding: 20px;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          border-top: 1px solid #eee;
+          z-index: 1001; /* Asegurar que quede sobre todo */
+      }
+      
+      .main-nav.active ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+      }
+
+      /* MÓVIL: Hero */
+      .hero {
+        padding-bottom: 60px; 
+      }
+      .hero-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-left, .hero-right {
+        max-width: 100%;
+        justify-content: center;
+      }
+      
+      .hero-left h1 {
+        font-size: 42px;
+      }
+      
+      .hero-right img {
+        max-height: 350px;
+        margin-top: 20px;
+        margin-bottom: -90px;
+      }
+      
+      .about {
+        padding-top: 100px;
+      }
+    }
