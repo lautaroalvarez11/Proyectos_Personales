@@ -297,17 +297,19 @@
 
     /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
-      /* MÓVIL: Header */
-      .main-nav { display: none; }
+      /* Ocultar acciones de header en desktop */
       .header-actions { display: none; }
-
-      .hamburger {
-        display: flex;
-        /* FIX CLAVE: margin-left: auto empuja el elemento al final a la derecha en flexbox */
+      
+      .hamburger { 
+        display: flex; 
+        /* Para que quede a la derecha */
         margin-left: auto; 
       }
 
-      /* MENÚ DESPLEGABLE */
+      /* Estilo Menú Móvil Desplegable */
+      .main-nav {
+        display: none;
+      }
       .main-nav.active {
           display: block;
           position: absolute;
@@ -315,42 +317,52 @@
           left: 0;
           width: 100%;
           background: white;
-          padding: 20px;
-          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-          border-top: 1px solid #eee;
-          z-index: 1001; /* Asegurar que quede sobre todo */
+          padding: 30px 20px;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+          border-top: 1px solid #f0f0f0;
+          z-index: 999;
+          animation: slideDown 0.3s ease forwards;
       }
       
+      @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+
       .main-nav.active ul {
           flex-direction: column;
           align-items: center;
-          gap: 20px;
+          gap: 25px;
+          width: 100%; /* Asegurar ancho total */
       }
-
-      /* MÓVIL: Hero */
-      .hero {
-        padding-bottom: 60px; 
+      
+      .main-nav.active a {
+          font-size: 18px;
       }
-      .hero-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-left, .hero-right {
-        max-width: 100%;
+      
+      .main-nav ul li.mobile-donar {
+        display: flex !important;
         justify-content: center;
+        width: 100%;
+        margin-top: 10px;
       }
       
-      .hero-left h1 {
-        font-size: 42px;
+      .main-nav ul li.mobile-donar .btn-donar {
+          width: 80%;
+          padding: 12px;
+          text-align: center;
       }
-      
+
+      /* Hero Móvil */
+      .hero { padding-bottom: 60px; }
+      .hero-inner { flex-direction: column; text-align: center; }
+      .hero-left, .hero-right { max-width: 100%; justify-content: center; }
+      .hero-left h1 { font-size: 42px; }
       .hero-right img {
         max-height: 350px;
         margin-top: 20px;
         margin-bottom: -90px;
       }
-      
       .about {
         padding-top: 100px;
       }

@@ -34,9 +34,14 @@
           <li><a href="noticias.html">Noticias</a></li>
           <li><a href="historias.html">Historias</a></li>
           <li><a href="contacto.html">Contacto</a></li>
+          <!-- Botón Donar Móvil -->
+          <li class="mobile-donar">
+             <a href="#" class="btn-donar">DONAR AQUÍ</a>
+          </li>
         </ul>
       </nav>
 
+      <!-- Botón Donar Desktop -->
       <div class="header-actions">
         <a href="#" class="btn-donar">DONAR AQUÍ</a>
       </div>
@@ -110,12 +115,14 @@
   </footer>
 
   <script>
-    // Script simple para el menú hamburguesa en móvil
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.getElementById('main-nav');
 
     hamburger.addEventListener('click', () => {
+      // Toggle de la visibilidad del menú
       mainNav.classList.toggle('active');
+      // Toggle de la animación de la X en el botón
+      hamburger.classList.toggle('open');
     });
   </script>
 </body>
