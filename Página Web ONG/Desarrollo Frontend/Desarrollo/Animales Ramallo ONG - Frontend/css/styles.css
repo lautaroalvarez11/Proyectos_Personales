@@ -407,8 +407,9 @@ Solo se muestra el que está en el header (.header-actions). */
     margin-top: 10px;
   }
       
-  .mobile-donar .btn-donar {
-    width: 30%;
+  .mobile-donar
+  .btn-donar {
+    width: 50%;
     padding: 10px;
     text-align: center;
   }
