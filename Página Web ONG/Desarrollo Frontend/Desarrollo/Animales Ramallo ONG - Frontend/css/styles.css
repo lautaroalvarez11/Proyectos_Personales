@@ -1,117 +1,120 @@
-/* 1. VARIABLES CSS (:root)
-   Se define colores y fuentes en un solo lugar. 
-   Por ejemplo, si se quiere cambiar el naranja en toda la web, solo se cambia acá.
+/* ESTILOS GENERALES - ANIMALES RAMALLO 
+   --------------------------------------
+   Incluye: Inicio, Adopciones, Formularios, etc.
 */
+
+/* --- 1. VARIABLES CSS (:root) --- */
 :root {
-  --orange-primary: #FE6416;
-  --orange-secondary: #EC3215;
-  --yellow-accent: #FFC83D;
-  --dark-text: #262626;
-  --white-bg: #F4F0F0;
-  --pure-white: #FFFFFF;    
-  --font-heading: 'Fredoka One', cursive;
-  --font-body: 'Montserrat', sans-serif;
+  --orange-primary: #FE6416;   
+  --orange-secondary: #EC3215; 
+  --yellow-accent: #FFC83D;    
+  --dark-text: #262626;        
+  --white-bg: #F4F0F0;         
+  --pure-white: #FFFFFF;       
+  --input-bg: #EAEAEA;         /* Fondo gris claro para inputs */
+  
+  --font-heading: 'Fredoka One', cursive; 
+  --font-body: 'Montserrat', sans-serif;  
 }
 
-/* 2. RESET BÁSICO 
-  Borra los margenes por defecto para tener el control total.
-*/
+/* --- 2. RESET BÁSICO --- */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Hace que el padding no aumente el tamaño total de los elementos. */
+  box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al usar anclas */
 }
 
 body {
   font-family: var(--font-body);
   color: var(--dark-text);
   background-color: var(--white-bg);
-  overflow-x: hidden; /* Evita scroll horizontal indeseado */
+  overflow-x: hidden; 
 }
 
 a {
-  text-decoration: none; /* Saca el subrayado de los enlaces */
-  color: inherit; /* Hereda el color del texto padre */
+  text-decoration: none; 
+  color: inherit;        
 }
 
 ul {
-  list-style: none; /* Saca los puntos de las listas */
+  list-style: none; 
 }
 
-/* 3. HEADER / NAV */
+/* --- 3. HEADER / BARRA DE NAVEGACIÓN --- */
 .site-header {
   background-color: var(--pure-white);
   padding: 15px 0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  position: sticky; /* Hace que el menú se quede pegado arriba al hacer scroll */
+  position: sticky; 
   top: 0;
-  z-index: 1000; /* Asegura que el menú flote sobre todo lo demás */
+  z-index: 1000; 
   width: 100%;
 }
 
 .header-inner {
-  max-width: 1200px; /* Ancho máximo para que no se estire en pantallas grandes */
+  max-width: 1200px; 
   width: 100%;
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  display: flex; /* Activa Flexbox para alinear elementos */
-  align-items: center; /* Centra verticalmente */
-  justify-content: space-between; /* Pone espacio entre el logo, menú y botón */
+  margin: 0 auto;    
+  display: flex;     
+  align-items: center; 
+  justify-content: space-between; 
   padding: 0 20px;
 }
 
 .logo img {
-  height: 70px; /* Altura del logo */
-  width: auto; /* El ancho se ajusta solo */
+  height: 60px; 
+  width: auto;  
 }
 
 .main-nav ul {
   display: flex;
-  gap: 30px; /* Espacio entre los enlaces del menú */
+  gap: 30px; 
   align-items: center; 
 }
 
 .main-nav a {
   font-weight: 600;
   font-size: 16px;
-  transition: color 0.3s; /* Suaviza el cambio de color al pasar el mouse */
+  transition: color 0.3s; 
 }
 
 .main-nav a:hover, 
 .main-nav a.active {
-  color: var(--orange-primary); /* Cambio de color al interactuar */
+  color: var(--orange-primary); 
 }
 
-/* 4. BOTONES (Estilo Global) */
+/* --- 4. BOTONES (Estilo Global) --- */
 .btn-donar {
   background-color: var(--yellow-accent);
   color: var(--pure-white);
   font-weight: 700;
   padding: 10px 20px;
-  border-radius: 8px; /* Bordes redondeados */
+  border-radius: 8px; 
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s; /* Animación suave */
+  transition: transform 0.2s, box-shadow 0.2s; 
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.5px;
   display: inline-block;
 }
 
-/* Efecto al pasar el mouse sobre el botón donar */
 .btn-donar:hover {
-  transform: translateY(-2px); /* Mueve el botón un poquito hacia arriba */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Aumenta la sombra */
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
 }
 
-/* 5. LOGICA DEL BOTÓN DONAR EN MÓVIL */
-/* Por defecto (Escritorio), se oculta el botón donar que va ADENTRO del menú.
-Solo se muestra el que está en el header (.header-actions). */
+/* --- 5. LÓGICA BOTÓN DONAR MÓVIL --- */
 .mobile-donar {
-  display: none; /*Se usa 'display: none' para que sea fácil de sobrescribir en el media query. */
+  display: none; /* Oculto en escritorio */
 }
 
-/* 6. MENÚ HAMBURGUESA (Móvil) */
+/* --- 6. MENÚ HAMBURGUESA (Móvil) --- */
 .hamburger {
-  display: none; /* Oculto en escritorio, aparecerá con Media Query */
+  display: none; 
   background: none;
   border: none;
   cursor: pointer;
@@ -121,49 +124,44 @@ Solo se muestra el que está en el header (.header-actions). */
   height: 24px; 
   padding: 0;
   z-index: 1100;
-  margin-left: auto; /* Empuja a la derecha */
+  margin-left: auto; 
 }
-    
+
 .hamburger span {
   display: block;
   width: 100%;
   height: 3px;
   background-color: var(--dark-text);
   border-radius: 3px;
-  transition: all 0.3s ease-in-out; /* Animación para transformarse en X */
+  transition: all 0.3s ease-in-out; 
   transform-origin: center;
 }
 
-/* Animación de transformación a "X" cuando tiene la clase .open */
+/* Animación Cruz (X) */
 .hamburger.open span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg); /* Barra superior baja y rota */
+  transform: translateY(10px) rotate(45deg); 
 }
-    
 .hamburger.open span:nth-child(2) {
-  opacity: 0; /* Barra del medio desaparece */
+  opacity: 0; 
 }
-    
 .hamburger.open span:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg); /* Barra inferior sube y rota */
+  transform: translateY(-11px) rotate(-45deg); 
 }
-    
-/* 7. HERO SECTION */
+
+/* --- 7. HERO SECTION (BASE) --- */
 .hero {
   background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), 
-                  url('Hero Section.png'); /* Degradado naranja semitransparente. */
+              url('Hero Section.png');
   background-size: cover;
   background-position: center;
-  background-blend-mode: overlay; /* Para que el color tiña la imagen. */
-
+  background-blend-mode: overlay;
   color: var(--pure-white);
   padding: 60px 20px 80px 20px; 
   position: relative;
-
-  border-bottom-left-radius: 80% 80px; /* Para darle curvatura al Hero Section */
-  border-bottom-right-radius: 80% 80px; 
-
-  overflow: visible; /* 'overflow: visible' permite que la imagen del perro se salga del Hero Section. Si fuera 'hidden', el perro se corta. */
-  z-index: 2; /* Pone al hero por encima de la sección siguiente */
+  border-bottom-left-radius: 50% 40px;
+  border-bottom-right-radius: 50% 40px;
+  overflow: visible; 
+  z-index: 2; 
 }
 
 .hero-inner {
@@ -176,21 +174,16 @@ Solo se muestra el que está en el header (.header-actions). */
   position: relative;
 }
 
-.hero-left {
-  flex: 1; /* Toma el espacio disponible a la izquierda */
-  max-width: 600px;
-  padding-bottom: 20px;
-}
-
-.hero-left h1 {
+/* Estilos de Texto Hero Comunes */
+.hero h1 {
   font-family: var(--font-heading);
   font-size: 56px;
-  line-height: 1.1; /* Altura de línea ajustada para títulos grandes */
+  line-height: 1.1; 
   margin-bottom: 20px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Pequeña sombra para legibilidad */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
 
-.hero-left p {
+.hero p {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -201,7 +194,7 @@ Solo se muestra el que está en el header (.header-actions). */
   background-color: var(--pure-white);
   color: var(--orange-primary);
   padding: 12px 30px;
-  border-radius: 30px; /* Botón muy redondo (forma de pastilla) */
+  border-radius: 30px; 
   font-weight: 700;
   font-size: 16px;
   display: inline-block;
@@ -214,11 +207,18 @@ Solo se muestra el que está en el header (.header-actions). */
   color: var(--pure-white);
 }
 
+/* --- 7A. HERO SECTION: INICIO (Específico) --- */
+.hero-left {
+  flex: 1; 
+  max-width: 600px;
+  padding-bottom: 20px;
+}
+
 .hero-right {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* Alinea la imagen a la derecha */
-  align-items: flex-end; /* Alinea la imagen abajo */
+  justify-content: flex-end; 
+  align-items: flex-end; 
   position: relative;
 }
 
@@ -227,24 +227,68 @@ Solo se muestra el que está en el header (.header-actions). */
   height: auto;
   max-height: 550px; 
   object-fit: contain;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); /* Sombra realista detrás del perro */
-
-  /* Se usa un margen negativo inferior para tirar la imagen hacia abajo,
-  haciendo que atraviese el borde curvo y pise la sección blanca. */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); 
   margin-bottom: -130px; 
   position: relative;
   z-index: 10;
 }
 
-/* 8. SECCIÓN SOBRE NOSOTROS (CARDS) */
+/* 7B. HERO SECTION: ADOPCIONES (Específico) */
+.hero-adopciones {
+  text-align: center; /* Todo centrado */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 102px; /* Un poco más de espacio abajo para los perros decorativos */
+}
+
+.hero-inner-adopciones {
+  width: 100%;
+  justify-content: center;
+  position: relative; /* Necesario para position: absolute de los perros */
+}
+
+/* Contenedor del texto central */
+.hero-content-center {
+  max-width: 800px; 
+  z-index: 5; /* Texto sobre perros si se tocan */
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Perros laterales decorativos (Desktop) */
+.hero-dog-left, .hero-dog-right {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.hero-dog-left {
+  left: -265px;
+}
+.hero-dog-left img {
+  height: 450px; 
+  width: auto;
+  transform: rotate(4deg); /* Ligera rotación para dinamismo */
+}
+
+.hero-dog-right {
+  right: -265px;
+}
+.hero-dog-right img {
+  height: 450px;
+  width: auto;
+  transform: rotate(-4deg);
+}
+
+
+/* 8. SECCIÓN SOBRE NOSOTROS (CARDS - INICIO) */
 .about {
-  /* Padding superior grande (140px) para darle espacio a las patas del perro
-  que vienen de la sección de arriba. Si no, el texto queda tapado. */
   padding: 140px 20px 80px 20px;
   text-align: center;
   background-color: var(--white-bg);
   position: relative;
-  z-index: 1; /* Se queda atrás del Hero */
+  z-index: 1; 
 }
 
 .about h2 {
@@ -259,7 +303,7 @@ Solo se muestra el que está en el header (.header-actions). */
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Permite que las tarjetas bajen a otra fila si no entran */
+  flex-wrap: wrap; 
   gap: 30px;
 }
 
@@ -268,7 +312,7 @@ Solo se muestra el que está en el header (.header-actions). */
   border-radius: 20px;
   padding: 40px 30px;
   width: 320px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra difusa y prolija */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
   border: 1px solid rgba(0,0,0,0.03);
   display: flex;
   flex-direction: column;
@@ -277,10 +321,9 @@ Solo se muestra el que está en el header (.header-actions). */
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Efecto de levitación al pasar el mouse */
+  transform: translateY(-5px); 
 }
 
-/* Wrapper para los íconos superpuestos (Mancha + Perro) */
 .icon-wrapper {
   position: relative;
   width: 120px;
@@ -292,19 +335,19 @@ Solo se muestra el que está en el header (.header-actions). */
 }
 
 .icon-bg {
-  position: absolute; /* Se pega al fondo del wrapper */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  z-index: 1;
+  z-index: 1; 
   opacity: 0.9;
 }
 
 .icon-dog {
   position: relative;
-  z-index: 2; /* Se pone encima de la mancha */
+  z-index: 2; 
   width: 60%; 
   height: auto;
   object-fit: contain;
@@ -325,13 +368,95 @@ Solo se muestra el que está en el header (.header-actions). */
 }
 
 .card .btn-donar {
-  margin-top: auto; /* Empuja el botón al final de la tarjeta siempre */
+  margin-top: auto; 
   width: 100%;
   text-align: center;
   box-sizing: border-box;
 }
 
-/* 9. FOOTER */
+/* 9. SECCIÓN INTEGRANTES (ADOPCIONES_1) */
+.integrantes-section {
+  padding: 120px 20px 60px 20px; /* Separación del Hero */
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.integrantes-section h2 {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  color: var(--dark-text);
+  margin-bottom: 60px;
+}
+
+/* Grilla de Adopción */
+.grid-adopcion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 130px;
+}
+
+/* Tarjeta Individual de Perro */
+.card-adopcion {
+  background: var(--pure-white);
+  border-radius: 30px; /* Bordes muy curvos */
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px; /* Padding interno */
+  transition: transform 0.3s;
+}
+
+.card-adopcion:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-container {
+  width: 100%;
+  height: 280px; 
+  border-radius: 20px; 
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Llena el contenedor recortando si es necesario */
+}
+
+.card-adopcion h3 {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  margin: 10px;
+  color: var(--dark-text);
+}
+
+.btn-conoce {
+  background-color: var(--pure-white);
+  color: var(--orange-primary);
+  padding: 12px 25px;
+  border: 2px solid var(--orange-primary);
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.btn-conoce:hover {
+  background-color: var(--yellow-accent);
+  color: var(--pure-white);
+  border: 2px solid var(--yellow-accent);
+}
+
+/* --- 10. FOOTER --- */
 .site-footer {
   background-color: var(--orange-primary);
   color: var(--pure-white);
@@ -339,35 +464,26 @@ Solo se muestra el que está en el header (.header-actions). */
   padding: 20px;
   margin-top: 40px;
 }
-    
+
 .site-footer p {
   font-size: 14px;
   font-weight: 500;
 }
 
-/* 10. RESPONSIVE (MÓVIL < 900px) Todas las reglas solo se aplican en pantallas pequeñas. */
-@media (max-width: 900px) {
-  /* 1. Ocultar el botón donar del header derecho (el de escritorio) */
-  .header-actions {
-    display: none;
-  }
-      
-  /* 2. Mostrar menú hamburguesa y alinear a la derecha */
-  .hamburger { 
-    display: flex; 
-    margin-left: auto; /* Empuja el ícono a la derecha */
-  }
 
-  /* 3. Estilo Menú Desplegable Móvil */
-  .main-nav {
-    display: none; /* Oculto hasta que se active */
-  }
+/* --- 11. RESPONSIVE DESIGN (< 900px) --- */
+@media (max-width: 900px) {
   
-  /* Cuando JS agrega la clase .active, el menú aparece */
+  /* HEADER MÓVIL */
+  .header-actions { display: none; }
+  .hamburger { display: flex; margin-left: auto; }
+
+  /* MENU DESPLEGABLE */
+  .main-nav { display: none; }
   .main-nav.active {
     display: block;
-    position: absolute; /* Flota sobre el contenido */
-    top: 100%; /* Justo abajo del header */
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     background: white;
@@ -375,64 +491,40 @@ Solo se muestra el que está en el header (.header-actions). */
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     border-top: 1px solid #f0f0f0;
     z-index: 999;
-    animation: slideDown 0.3s ease forwards; /* Animación de caída */
+    animation: slideDown 0.3s ease forwards;
   }
-
-/* Definición de la animación suave */
-@keyframes slideDown {
-  from {
-    opacity: 0; transform: translateY(-10px);
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  to {
-    opacity: 1; transform: translateY(0);
-  }
-}
 
   .main-nav.active ul {
-    flex-direction: column; /* Lista vertical */
+    flex-direction: column;
     align-items: center;
     gap: 25px;
     width: 100%;
   }
-      
-  .main-nav.active a {
-    font-size: 18px; /* Texto más grande para dedos en pantallas táctiles */
-  }
+  
+  .main-nav.active a { font-size: 18px; }
 
-  /* 4. VISIBILIDAD BOTÓN DONAR DENTRO DEL MENÚ MÓVIL */
+  /* Botón Donar en Menú Móvil */
   .mobile-donar {
-    display: block; /* Hace visible el elemento solo cuando se abre */
+    display: block; 
     width: 100%;
     text-align: center;
     margin-top: 10px;
   }
-      
-  .mobile-donar
-  .btn-donar {
+  .mobile-donar .btn-donar {
     width: 50%;
     padding: 10px;
-    text-align: center;
   }
 
-  /* Ajustes del Hero para móvil */
-  .hero {
-    padding-bottom: 60px;
-  }
-  
-  .hero-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-      
-  .hero-left,
-  .hero-right {
-    max-width: 100%;
-    justify-content: center;
-  }
-      
-  .hero-left h1 {
-    font-size: 42px;
-  }
+  /* HERO INICIO MÓVIL */
+  .hero { padding-bottom: 60px; }
+  .hero-inner { flex-direction: column; text-align: center; } 
+  .hero-left, .hero-right { max-width: 100%; justify-content: center; }
+  .hero-left h1 { font-size: 42px; }
   
   .hero-right img {
     max-height: 350px;
@@ -440,7 +532,37 @@ Solo se muestra el que está en el header (.header-actions). */
     margin-bottom: -90px;
   }
   
-  .about {
-    padding-top: 100px;
+  .about { padding-top: 100px; }
+
+  /* --- HERO ADOPCIONES MÓVIL --- 
+     Cambio drástico: Los perros ya no pueden estar a los costados absolutos.
+     Se reacomodan en el flujo normal.
+  */
+  .hero-adopciones {
+    padding-bottom: 80px; 
   }
+
+  .hero-inner-adopciones {
+    flex-direction: column;
+  }
+  
+  /* Hacemos que los perros se comporten como imágenes normales */
+  .hero-dog-left, .hero-dog-right {
+    position: relative; /* Ya no absolutos */
+    display: none; /* Ocultos inicialmente */
+    margin: 10px auto; /* Centrados */
+    bottom: auto; left: auto; right: auto;
+  }
+  
+  /* Ajustamos tamaño y quitamos rotación si molesta, o la dejamos sutil */
+  .hero-dog-left img, .hero-dog-right img {
+    height: 180px; 
+    transform: none; /* Quitamos rotación para que se vean prolijos apilados */
+  }
+  
+  /* Orden Visual en Móvil (Opcional):
+     Si quisieras que el texto quede PRIMERO, puedes usar Flex order.
+     Pero por defecto, en el HTML está: DogLeft, Texto, DogRight.
+     Se verán: Perro 1 -> Texto -> Perro 2.
+  */
 }
