@@ -1,9 +1,6 @@
-/* ESTILOS GENERALES - ANIMALES RAMALLO 
-   --------------------------------------
-   Incluye: Inicio, Adopciones, Formularios, etc.
-*/
+/* ESTILOS GENERALES - ANIMALES RAMALLO */
 
-/* --- 1. VARIABLES CSS (:root) --- */
+/* VARIABLES CSS */
 :root {
   --orange-primary: #FE6416;   
   --orange-secondary: #EC3215; 
@@ -11,120 +8,120 @@
   --dark-text: #262626;        
   --white-bg: #F4F0F0;         
   --pure-white: #FFFFFF;       
-  --input-bg: #EAEAEA;         /* Fondo gris claro para inputs */
-  
   --font-heading: 'Fredoka One', cursive; 
   --font-body: 'Montserrat', sans-serif;  
 }
 
-/* --- 2. RESET BÁSICO --- */
+/* -------------------------------------------------------------------------------------------- */
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave al usar anclas */
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-body);
   color: var(--dark-text);
   background-color: var(--white-bg);
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 a {
-  text-decoration: none; 
-  color: inherit;        
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
-  list-style: none; 
+  list-style: none;
 }
 
-/* --- 3. HEADER / BARRA DE NAVEGACIÓN --- */
+/* -------------------------------------------------------------------------------------------- */
+
+/* HEADER GENERAL */
 .site-header {
   background-color: var(--pure-white);
   padding: 15px 0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  position: sticky; 
-  top: 0;
-  z-index: 1000; 
+  position: sticky;
+  top: 0; z-index: 1000;
   width: 100%;
 }
 
 .header-inner {
-  max-width: 1200px; 
+  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;    
-  display: flex;     
-  align-items: center; 
-  justify-content: space-between; 
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
 }
 
 .logo img {
-  height: 60px; 
-  width: auto;  
+  height: 60px;
+  width: auto;
 }
 
 .main-nav ul {
   display: flex;
-  gap: 30px; 
-  align-items: center; 
+  gap: 30px;
+  align-items: center;
 }
 
 .main-nav a {
   font-weight: 600;
   font-size: 16px;
-  transition: color 0.3s; 
+  transition: color 0.3s;
 }
 
-.main-nav a:hover, 
-.main-nav a.active {
-  color: var(--orange-primary); 
+.main-nav a:hover, .main-nav a.active {
+  color: var(--orange-primary);
 }
 
-/* --- 4. BOTONES (Estilo Global) --- */
+/* -------------------------------------------------------------------------------------------- */
+
+/* BOTONES Y MENÚ */
 .btn-donar {
   background-color: var(--yellow-accent);
   color: var(--pure-white);
   font-weight: 700;
   padding: 10px 20px;
-  border-radius: 8px; 
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s; 
+  transition: transform 0.2s, box-shadow 0.2s;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.5px;
   display: inline-block;
 }
 
-.btn-donar:hover {
-  transform: translateY(-2px); 
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+.btn-donar:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* --- 5. LÓGICA BOTÓN DONAR MÓVIL --- */
 .mobile-donar {
-  display: none; /* Oculto en escritorio */
+  display: none;
 }
 
-/* --- 6. MENÚ HAMBURGUESA (Móvil) --- */
 .hamburger {
-  display: none; 
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 24px; 
+  height: 24px;
   padding: 0;
   z-index: 1100;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .hamburger span {
@@ -133,35 +130,37 @@ ul {
   height: 3px;
   background-color: var(--dark-text);
   border-radius: 3px;
-  transition: all 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out;
   transform-origin: center;
 }
 
-/* Animación Cruz (X) */
 .hamburger.open span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg); 
+  transform: translateY(10px) rotate(45deg);
 }
+
 .hamburger.open span:nth-child(2) {
-  opacity: 0; 
+  opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
   transform: translateY(-11px) rotate(-45deg); 
 }
 
-/* --- 7. HERO SECTION (BASE) --- */
+/* -------------------------------------------------------------------------------------------- */
+
+/* HERO SECTION (Inicio/Adopciones 1) */
 .hero {
-  background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), 
-              url('Hero Section.png');
+  background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), url('Hero Section.png');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
   color: var(--pure-white);
-  padding: 60px 20px 80px 20px; 
+  padding: 60px 20px 80px 20px;
   position: relative;
-  border-bottom-left-radius: 50% 40px;
+  border-bottom-left-radius:50% 40px;
   border-bottom-right-radius: 50% 40px;
-  overflow: visible; 
-  z-index: 2; 
+  overflow: visible;
+  z-index: 2;
 }
 
 .hero-inner {
@@ -174,27 +173,26 @@ ul {
   position: relative;
 }
 
-/* Estilos de Texto Hero Comunes */
 .hero h1 {
   font-family: var(--font-heading);
   font-size: 56px;
-  line-height: 1.1; 
+  line-height: 1.1;
   margin-bottom: 20px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .hero p {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 30px;
-  font-weight: 400;
+  font-weight: 400; 
 }
 
 .btn-contact {
   background-color: var(--pure-white);
   color: var(--orange-primary);
   padding: 12px 30px;
-  border-radius: 30px; 
+  border-radius: 30px;
   font-weight: 700;
   font-size: 16px;
   display: inline-block;
@@ -203,39 +201,40 @@ ul {
 }
 
 .btn-contact:hover {
-  background-color: var(--yellow-accent);
-  color: var(--pure-white);
+  background-color: var(--yellow-accent); 
+  color: var(--pure-white); 
 }
 
-/* --- 7A. HERO SECTION: INICIO (Específico) --- */
+/* HERO SECTION Inicio (Específico) */
 .hero-left {
-  flex: 1; 
-  max-width: 600px;
+  flex: 1;
+  max-width:
+  600px;
   padding-bottom: 20px;
 }
 
 .hero-right {
   flex: 1;
-  display: flex;
+  display: flex; 
   justify-content: flex-end; 
   align-items: flex-end; 
   position: relative;
 }
 
-.hero-right img {
-  max-width: 100%;
-  height: auto;
+.hero-right img { 
+  max-width: 100%; 
+  height: auto; 
   max-height: 550px; 
-  object-fit: contain;
+  object-fit: contain; 
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); 
   margin-bottom: -130px; 
-  position: relative;
+  position: relative; 
   z-index: 10;
 }
 
-/* 7B. HERO SECTION: ADOPCIONES (Específico) */
+/* HERO SECTION Adopciones (Específico) */
 .hero-adopciones {
-  text-align: center; /* Todo centrado */
+  text-align: center;
   display: flex;
   justify-content: center;
   padding-bottom: 102px; /* Un poco más de espacio abajo para los perros decorativos */
@@ -281,186 +280,186 @@ ul {
   transform: rotate(-4deg);
 }
 
+/* -------------------------------------------------------------------------------------------- */
 
-/* 8. SECCIÓN SOBRE NOSOTROS (CARDS - INICIO) */
-.about {
-  padding: 140px 20px 80px 20px;
-  text-align: center;
-  background-color: var(--white-bg);
-  position: relative;
-  z-index: 1; 
+/* TARJETAS página de Inicio */
+.about { 
+  padding: 140px 20px 80px 20px; 
+  text-align: center; 
+  background-color: var(--white-bg); 
+  position: relative; z-index: 1; 
 }
 
-.about h2 {
-  font-family: var(--font-heading);
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: var(--dark-text);
+.about h2 { 
+  font-family: var(--font-heading); 
+  font-size: 36px; 
+  margin-bottom: 50px; 
+  color: var(--dark-text); 
 }
 
-.cards-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
+.cards-container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex; 
+  justify-content: center; 
   flex-wrap: wrap; 
-  gap: 30px;
+  gap: 30px; 
 }
 
 .card {
-  background-color: var(--pure-white);
-  border-radius: 20px;
-  padding: 40px 30px;
-  width: 320px;
+  background-color: var(--pure-white); 
+  border-radius: 20px; 
+  padding: 40px 30px; 
+  width: 320px; 
   box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-  border: 1px solid rgba(0,0,0,0.03);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s;
+  border: 1px solid rgba(0,0,0,0.03); 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  transition: transform 0.3s; 
 }
 
-.card:hover {
+.card:hover { 
   transform: translateY(-5px); 
 }
 
-.icon-wrapper {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.icon-wrapper { 
+  position: relative; 
+  width: 120px; 
+  height: 120px; 
+  margin-bottom: 20px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
-.icon-bg {
+.icon-bg { 
   position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
   z-index: 1; 
-  opacity: 0.9;
+  opacity: 0.9; 
 }
 
-.icon-dog {
-  position: relative;
+.icon-dog { 
+  position: relative; 
   z-index: 2; 
   width: 60%; 
-  height: auto;
-  object-fit: contain;
+  height: auto; 
+  object-fit: contain; 
 }
 
-.card h3 {
-  font-family: var(--font-heading);
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: var(--dark-text);
+.card h3 { 
+  font-family: var(--font-heading); 
+  font-size: 18px; 
+  margin-bottom: 15px; 
+  color: var(--dark-text); 
 }
 
-.card p {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #555;
-  margin-bottom: 20px;
+.card p { 
+  font-size: 15px; 
+  line-height: 1.5; 
+  color: #555; 
+  margin-bottom: 20px; 
 }
 
-.card .btn-donar {
+.card .btn-donar { 
   margin-top: auto; 
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
+  width: 100%; 
+  text-align: center; 
+  box-sizing: border-box; 
 }
 
-/* 9. SECCIÓN INTEGRANTES (ADOPCIONES_1) */
-.integrantes-section {
-  padding: 120px 20px 60px 20px; /* Separación del Hero */
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
+/* -------------------------------------------------------------------------------------------- */
+
+/* PERROS ADOPTABLES (Adopciones 1) (Grilla) */
+.integrantes-section { 
+  padding: 80px 20px 60px 20px; 
+  text-align: center; 
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
-.integrantes-section h2 {
-  font-family: var(--font-heading);
-  font-size: 42px;
-  color: var(--dark-text);
-  margin-bottom: 60px;
+.integrantes-section h2 { 
+  font-family: var(--font-heading); 
+  font-size: 42px; 
+  color: var(--dark-text); 
+  margin-bottom: 60px; 
 }
 
-/* Grilla de Adopción */
-.grid-adopcion {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 130px;
+.grid-adopcion { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 130px; 
 }
 
-/* Tarjeta Individual de Perro */
-.card-adopcion {
-  background: var(--pure-white);
-  border-radius: 30px; /* Bordes muy curvos */
-  width: 300px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px; /* Padding interno */
-  transition: transform 0.3s;
+.card-adopcion { 
+  background: var(--pure-white); 
+  border-radius: 30px; 
+  width: 300px; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  padding: 15px; 
+  transition: transform 0.3s; 
 }
 
-.card-adopcion:hover {
-    transform: translateY(-5px);
+.card-adopcion:hover { 
+  transform: translateY(-5px); 
 }
 
-.card-img-container {
-  width: 100%;
+.card-img-container { 
+  width: 100%; 
   height: 280px; 
   border-radius: 20px; 
-  overflow: hidden;
-  margin-bottom: 8px;
+  overflow: hidden; 
+  margin-bottom: 8px; 
 }
 
-.card-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Llena el contenedor recortando si es necesario */
+.card-img-container img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
 }
 
-.card-adopcion h3 {
-  font-family: var(--font-heading);
-  font-size: 26px;
-  margin: 10px;
-  color: var(--dark-text);
+.card-adopcion h3 { 
+  font-family: var(--font-heading); 
+  font-size: 26px; 
+  margin: 10px; 
+  color: var(--dark-text); 
 }
 
-.btn-conoce {
-  background-color: var(--pure-white);
-  color: var(--orange-primary);
-  padding: 12px 25px;
-  border: 2px solid var(--orange-primary);
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 14px;
-  width: 100%;
-  text-align: center;
-  margin-top: 5px;
-  text-transform: uppercase;
-  transition: background 0.2s;
+.btn-conoce { 
+  background-color: var(--pure-white); 
+  color: var(--orange-primary); 
+  padding: 12px 25px; 
+  border: 2px solid var(--orange-primary); 
+  border-radius: 50px; 
+  font-weight: 700; 
+  font-size: 14px; 
+  width: 100%; 
+  text-align: center; 
+  margin-top: 5px; 
+  text-transform: uppercase; 
+  transition: background 0.2s; 
 }
 
-.btn-conoce:hover {
-  background-color: var(--yellow-accent);
-  color: var(--pure-white);
-  border: 2px solid var(--yellow-accent);
+.btn-conoce:hover { 
+  background-color: var(--yellow-accent); 
+  color: var(--pure-white); 
+  border: 2px solid var(--yellow-accent); 
 }
 
-/* --- 10. DETALLE DE ANIMAL (Adopciones 2) --- */
+/* -------------------------------------------------------------------------------------------- */
 
-/* 10.1 HERO DEL DETALLE (Texto y Botón) */
+/* DETALLE DE ANIMAL (Adopciones 2) */
+/* 1. HERO SECTION (Texto y Botón) */
 .infoAnimal-section {
-  /* Fondo naranja curvo */
   background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), 
               url('Hero Section.png');
   background-size: cover;
@@ -476,6 +475,8 @@ ul {
 .infoAnimal-inner {
   max-width: 900px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .animal-info {
@@ -506,7 +507,7 @@ ul {
 .btn-ayuda-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end; /* Lo empuja a la derecha */
+  justify-content: flex-end; /* Botón a la derecha */
   margin-top: 30px;
 }
 
@@ -521,6 +522,8 @@ ul {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   border: 2px solid transparent;
   cursor: pointer;
+  text-align: center;
+  display: inline-block;
 }
 
 .btn-ayuda:hover {
@@ -529,14 +532,14 @@ ul {
   transform: translateY(-2px);
 }
 
-/* 10.2 SECCIÓN DE GALERÍA (3 IMÁGENES DEBAJO) */
+/* 2. SECCIÓN DE GALERÍA (3 imágenes debajo) */
 .animal-gallery-section {
   padding: 60px 20px;
   background-color: var(--white-bg);
 }
 
 .animal-gallery-grid {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -544,7 +547,6 @@ ul {
   flex-wrap: wrap; 
 }
 
-/* 2. CORRECCIÓN: Imágenes con borde sutil del color del Hero */
 .gallery-img-container {
   flex: 1; 
   min-width: 280px;
@@ -553,10 +555,7 @@ ul {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  
-  /* BORDE SUTIL COLOR HERO (Naranja) */
   border: 2px solid var(--orange-primary); 
-  
   transition: transform 0.3s ease;
 }
 
@@ -570,7 +569,9 @@ ul {
   object-fit: cover;
 }
 
-/* 11. FOOTER */
+/* -------------------------------------------------------------------------------------------- */
+
+/* FOOTER */
 .site-footer {
   background-color: var(--orange-primary);
   color: var(--pure-white);
@@ -584,7 +585,9 @@ ul {
   font-weight: 500;
 }
 
-/* 12. RESPONSIVE DESIGN (< 900px) */
+/* -------------------------------------------------------------------------------------------- */
+
+/* RESPONSIVE DESIGN (< 900px) */
 @media (max-width: 900px) {
   
   /* HEADER MÓVIL */
