@@ -29,11 +29,21 @@
 
       <nav class="main-nav" id="main-nav">
         <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
-          <li><a href="adopciones.html">Adopciones</a></li>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="historias.html">Historias</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li>
+            <a href="index.html" class="active">Inicio</a>
+          </li>
+          <li>
+            <a href="adopciones_1.html">Adopciones</a>
+          </li>
+          <li>
+            <a href="noticias.html">Noticias</a>
+          </li>
+          <li>
+            <a href="historias.html">Historias</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
           
           <!-- Botón Donar Móvil -->
           <li class="mobile-donar">
@@ -49,18 +59,42 @@
     </div>
   </header>
 
-  <!-- SECCIÓN DESTACADA DE EJEMPLO: JUANA -->
-  <section class="juana-section">
-    <div class="juana-inner">
-      <div class="juana-img">
-        <img src="img/Adopciones/Juana.jpg" alt="Juana">
+  <!-- SECCIÓN DETALLE ANIMAL -->
+  <section class="infoAnimal-section">
+    <!-- Usamos hero-inner para mantener el ancho y márgenes consistentes con el resto del sitio -->
+    <div class="hero-inner">
+        <!-- Contenedor de Info -->
+        <div class="animal-info">
+          <h2 id="animal-name">Cargando...</h2>
+          
+          <div id="animal-desc">
+            <!-- La descripción se llena con JS -->
+          </div>
+          
+          <!-- Botón -->
+           <div class="btn-ayuda-container">
+            <a href="adopciones_3.html" class="btn-ayuda">¡Adopto!</a>
+           </div>
+        </div>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- 2. SECCIÓN DE GALERÍA (3 Imágenes Centradas con Borde) -->
+  <section class="animal-gallery-section">
+    <div class="animal-gallery-grid">
+      <!-- Imagen 1 -->
+      <div class="gallery-img-container">
+        <img id="gallery-img-1" src="" alt="Foto 1" onerror="this.src='https://placehold.co/400x400?text=Foto+1'">
       </div>
-      <div class="juana-info">
-        <h2>Te presentamos a Juana</h2>
-        <p>Juana fue quien prácticamente inauguró nuestro predio. Llegó hace dos años con un montón de bebés y todavía sigue buscando un hogar.</p>
-        <p>Es una perra hembra, castrada, se lleva bien con otros perros, es buena con las personas y súper tranquila.</p>
-        <!-- Redirige a la página 3 (Formulario) -->
-        <a href="adopciones_3.html" class="btn-ayuda">¿Nos ayudás a buscarle un hogar?</a>
+      <!-- Imagen 2 -->
+      <div class="gallery-img-container">
+        <img id="gallery-img-2" src="" alt="Foto 2" onerror="this.src='https://placehold.co/400x400?text=Foto+2'">
+      </div>
+      <!-- Imagen 3 -->
+      <div class="gallery-img-container">
+        <img id="gallery-img-3" src="" alt="Foto 3" onerror="this.src='https://placehold.co/400x400?text=Foto+3'">
       </div>
     </div>
   </section>
@@ -77,6 +111,75 @@
     hamburger.addEventListener('click', () => {
       mainNav.classList.toggle('active');
       hamburger.classList.toggle('open');
+    });
+
+    // 2. DATOS DE LOS ANIMALES
+    const animalesData = {
+      'juana': {
+        nombre: 'Te presentamos a Juana',
+        descripcion: `
+          <p>Juana fue quien prácticamente inauguró nuestro predio. Llegó hace dos años con un montón de bebés y todavía sigue buscando un hogar.</p>
+          <p>Es una perra hembra, castrada, se lleva bien con otros perros, es buena con las personas y súper tranquila.</p>
+          <h3>¿Nos ayudás a buscarle un hogar?</h3>
+        `,
+        galeria: [
+          'Imágenes/Adopciones/Juana.jpg',
+          'Imágenes/Adopciones/Juana.jpg', 
+          'Imágenes/Adopciones/Juana.jpg'
+        ]
+      },
+      'simpa': {
+        nombre: 'Te presentamos a Simpa',
+        descripcion: `
+          <p>Simpa es pura energía y lealtad. Fue rescatado de una situación difícil pero su espíritu alegre sigue intacto.</p>
+          <p>Es un macho joven, castrado, ideal para familias que disfruten del aire libre y los juegos.</p>
+          <h3>¿Nos ayudás a buscarle un hogar?</h3>
+        `,
+        galeria: [
+          'Imágenes/Adopciones/Simpa.jpg',
+          'Imágenes/Adopciones/Simpa.jpg',
+          'Imágenes/Adopciones/Simpa.jpg'
+        ]
+      },
+      'maddie': {
+        nombre: 'Te presentamos a Maddie',
+        descripcion: `
+          <p>Maddie tiene la mirada más dulce del refugio. Es tranquila, cariñosa y busca una familia que le de muchos mimos.</p>
+          <p>Hembra mediana, castrada, se lleva excelente con niños y otros animales.</p>
+          <h3>¿Nos ayudás a buscarle un hogar?</h3>
+        `,
+        galeria: [
+          'Imágenes/Adopciones/Maddie.jpg',
+          'Imágenes/Adopciones/Maddie.jpg',
+          'Imágenes/Adopciones/Maddie.jpg'
+        ]
+      }
+    };
+
+    // 3. CARGAR DATOS
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const animalId = getQueryParam('id');
+      
+      const nameElement = document.getElementById('animal-name');
+      const descElement = document.getElementById('animal-desc');
+      const img1 = document.getElementById('gallery-img-1');
+      const img2 = document.getElementById('gallery-img-2');
+      const img3 = document.getElementById('gallery-img-3');
+
+      // Si no hay ID, carga Juana por defecto
+      const animal = (animalId && animalesData[animalId]) ? animalesData[animalId] : animalesData['juana'];
+
+      if(nameElement) nameElement.textContent = animal.nombre;
+      if(descElement) descElement.innerHTML = animal.descripcion;
+      
+      if(img1) img1.src = animal.galeria[0];
+      if(img2) img2.src = animal.galeria[1];
+      if(img3) img3.src = animal.galeria[2];
     });
   </script>
 </body>

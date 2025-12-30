@@ -456,7 +456,121 @@ ul {
   border: 2px solid var(--yellow-accent);
 }
 
-/* --- 10. FOOTER --- */
+/* --- 10. DETALLE DE ANIMAL (Adopciones 2) --- */
+
+/* 10.1 HERO DEL DETALLE (Texto y Botón) */
+.infoAnimal-section {
+  /* Fondo naranja curvo */
+  background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), 
+              url('Hero Section.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  
+  color: var(--pure-white);
+  /* Ajuste de padding para centrar verticalmente mejor */
+  padding: 40px 5px 50px 10px; 
+  position: relative;
+}
+
+.infoAnimal-inner {
+  max-width: 900px;
+  width: 100%;
+}
+
+.animal-info {
+  text-align: left; /* Texto a la izquierda por defecto */
+   width: 100%;
+}
+
+.animal-info h2 {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.animal-info p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 3px;
+  max-width: 800px;
+}
+
+.animal-info h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.btn-ayuda-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Lo empuja a la derecha */
+  margin-top: 30px;
+}
+
+.btn-ayuda {
+  background-color: var(--pure-white);
+  color: var(--orange-primary);
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-ayuda:hover {
+  background-color: var(--yellow-accent);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+}
+
+/* 10.2 SECCIÓN DE GALERÍA (3 IMÁGENES DEBAJO) */
+.animal-gallery-section {
+  padding: 60px 20px;
+  background-color: var(--white-bg);
+}
+
+.animal-gallery-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Espacio entre las imágenes */
+  flex-wrap: wrap; 
+}
+
+/* 2. CORRECCIÓN: Imágenes con borde sutil del color del Hero */
+.gallery-img-container {
+  flex: 1; 
+  min-width: 280px;
+  max-width: 380px; 
+  height: 350px; 
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  
+  /* BORDE SUTIL COLOR HERO (Naranja) */
+  border: 2px solid var(--orange-primary); 
+  
+  transition: transform 0.3s ease;
+}
+
+.gallery-img-container:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 11. FOOTER */
 .site-footer {
   background-color: var(--orange-primary);
   color: var(--pure-white);
@@ -470,8 +584,7 @@ ul {
   font-weight: 500;
 }
 
-
-/* --- 11. RESPONSIVE DESIGN (< 900px) --- */
+/* 12. RESPONSIVE DESIGN (< 900px) */
 @media (max-width: 900px) {
   
   /* HEADER MÓVIL */
@@ -534,10 +647,6 @@ ul {
   
   .about { padding-top: 100px; }
 
-  /* --- HERO ADOPCIONES MÓVIL --- 
-     Cambio drástico: Los perros ya no pueden estar a los costados absolutos.
-     Se reacomodan en el flujo normal.
-  */
   .hero-adopciones {
     padding-bottom: 80px; 
   }
@@ -561,8 +670,33 @@ ul {
   }
   
   /* Orden Visual en Móvil (Opcional):
-     Si quisieras que el texto quede PRIMERO, puedes usar Flex order.
+     Si se quiere que el texto quede PRIMERO, se puede usar Flex order.
      Pero por defecto, en el HTML está: DogLeft, Texto, DogRight.
      Se verán: Perro 1 -> Texto -> Perro 2.
   */
+
+  /* RESPONSIVE DETALLE ANIMAL */
+  .infoAnimal-section {
+    padding-bottom: 60px; /* Menos espacio curva en móvil */
+  }
+
+  /* CORRECCIÓN FINAL: Texto centrado en móvil */
+  .animal-info {
+    text-align: center;
+  }
+  
+  .btn-ayuda-container {
+    justify-content: center; /* Botón centrado en móvil */
+  }
+  
+  .animal-gallery-grid {
+    flex-direction: column; /* Fotos una abajo de otra */
+    align-items: center;
+  }
+  
+  .gallery-img-container {
+    width: 100%;
+    max-width: 100%; /* Ocupan todo el ancho */
+    height: 300px; 
+  }
 }
