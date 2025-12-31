@@ -237,7 +237,7 @@ ul {
   text-align: center;
   display: flex;
   justify-content: center;
-  padding-bottom: 102px; /* Un poco más de espacio abajo para los perros decorativos */
+  padding-bottom: 99.1px; /* Un poco más de espacio abajo para los perros decorativos */
 }
 
 .hero-inner-adopciones {
@@ -268,7 +268,7 @@ ul {
 .hero-dog-left img {
   height: 450px; 
   width: auto;
-  transform: rotate(4deg); /* Ligera rotación para dinamismo */
+  transform: rotate(2.7deg); /* Ligera rotación para dinamismo */
 }
 
 .hero-dog-right {
@@ -277,7 +277,7 @@ ul {
 .hero-dog-right img {
   height: 450px;
   width: auto;
-  transform: rotate(-4deg);
+  transform: rotate(-2.7deg);
 }
 
 /* -------------------------------------------------------------------------------------------- */
@@ -571,6 +571,163 @@ ul {
 
 /* -------------------------------------------------------------------------------------------- */
 
+/* FORMULARIO ADOPCIÓN (Adopciones 3) */
+/*  1. HERO SECTION FORMULARIO */
+.hero-formulario-section {
+  background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), 
+              url('Hero Section.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: var(--pure-white);
+  padding: 50px 20px 50px 20px; 
+  position: relative;
+  text-align: center;
+}
+
+.hero-formulario-section .hero-inner {
+  display: block;
+  text-align: center;
+}
+
+.hero-formulario-section h1 {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/*  2. FORMULARIO + IMAGEN */
+.form-container-section {
+  padding: 80px 20px;
+  background-color: var(--white-bg);
+}
+
+.form-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px; /* Espacio entre formulario e imagen */
+  align-items: stretch;
+}
+
+/* Columna Formulario */
+.form-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.adopcion-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Filas de campos*/
+.form-raw {
+  display: flex;
+  gap: 20px;
+
+}
+
+.form-group {
+  flex: 1; /* Para que ocupen igual ancho en la fila */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+
+.form-row .form-group {
+  margin-bottom: 0; 
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--dark-text);
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: var(--white-bg);
+  border: 1px solid var(--orange-primary);
+  border-radius: 10px;
+  padding: 15px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-group textarea {
+  min-height: 150px; /* Asegura que sea más largo que los demás */
+  text-align: left; /* Placeholder y texto a la izquierda */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--orange-primary); /* Borde naranja al escribir */
+  background-color: var(--white-bg);
+}
+
+/* Placeholder transparente al hacer clic */
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  color: transparent;
+}
+
+.form-aclaracion {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 25px; 
+  margin-top: -10px; /* Acercarlo un poco al campo anterior */
+  font-style: italic;
+  text-align: left;
+  width: 100%;
+}
+
+.btn-enviar {
+  background-color: var(--yellow-accent);
+  color: var(--pure-white);
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  align-self: flex-start; /* Alineado a la izquierda */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-enviar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Columna Imagen */
+.form-image-wrapper {
+  flex: 1;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+}
+
+.form-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
 /* FOOTER */
 .site-footer {
   background-color: var(--orange-primary);
@@ -658,7 +815,6 @@ ul {
     flex-direction: column;
   }
   
-  /* Hacemos que los perros se comporten como imágenes normales */
   .hero-dog-left, .hero-dog-right {
     position: relative; /* Ya no absolutos */
     display: none; /* Ocultos inicialmente */
@@ -666,10 +822,9 @@ ul {
     bottom: auto; left: auto; right: auto;
   }
   
-  /* Ajustamos tamaño y quitamos rotación si molesta, o la dejamos sutil */
   .hero-dog-left img, .hero-dog-right img {
     height: 180px; 
-    transform: none; /* Quitamos rotación para que se vean prolijos apilados */
+    transform: none;
   }
   
   /* Orden Visual en Móvil (Opcional):
@@ -678,12 +833,10 @@ ul {
      Se verán: Perro 1 -> Texto -> Perro 2.
   */
 
-  /* RESPONSIVE DETALLE ANIMAL */
   .infoAnimal-section {
-    padding-bottom: 60px; /* Menos espacio curva en móvil */
+    padding-bottom: 60px;
   }
 
-  /* CORRECCIÓN FINAL: Texto centrado en móvil */
   .animal-info {
     text-align: center;
   }
@@ -701,5 +854,35 @@ ul {
     width: 100%;
     max-width: 100%; /* Ocupan todo el ancho */
     height: 300px; 
+  }
+
+  .hero-formulario-section h1 {
+    font-size: 36px;
+  }
+
+  .form-inner {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .form-wrapper {
+    width: 100%;
+  }
+  
+  .form-row {
+    flex-direction: column; 
+    gap: 35px;
+    margin-bottom: 35px;
+  } 
+  
+  .form-row .form-group {
+    margin-bottom: 0;
+  } 
+  
+  .form-image-wrapper {
+    width: 100%;
+    height: 300px; 
+    position: relative;
   }
 }

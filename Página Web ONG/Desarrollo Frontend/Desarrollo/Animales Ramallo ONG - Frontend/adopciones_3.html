@@ -29,11 +29,21 @@
 
       <nav class="main-nav" id="main-nav">
         <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
-          <li><a href="adopciones_1.html">Adopciones</a></li>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="historias.html">Historias</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="adopciones_1.html" class="active">Adopciones</a>
+          </li>
+          <li>
+            <a href="noticias.html">Noticias</a>
+          </li>
+          <li>
+            <a href="historias.html">Historias</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
           
           <!-- Botón Donar Móvil -->
           <li class="mobile-donar">
@@ -49,43 +59,63 @@
     </div>
   </header>
 
-  <!-- SECCIÓN FORMULARIO -->
-  <section class="formulario-section">
-    <div class="form-container">
-      <h2>Formulario de adopción</h2>
-      
-      <form action="#" method="POST" class="adopcion-form">
-        <div class="form-group">
-          <label for="nombre_apellido">Nombre y Apellido</label>
-          <input type="text" id="nombre_apellido" name="nombre_apellido" placeholder="Nombre y apellido" required>
-        </div>
-        <div class="form-group">
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
-        </div>
-        <div class="form-group">
-          <label for="direccion">Dirección</label>
-          <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
-        </div>
-        <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <input type="tel" id="mensaje" name="mensaje" placeholder="Mensaje opcional">
-        </div>
-        
-        <button type="submit" class="btn-enviar">ENVIAR</button>
-      </form>
+  <!-- HERO SECTION FORMULARIO -->
+  <section class="hero-formulario-section">
+    <div class="hero-inner">
+      <h1>Formulario de contacto</h1>
     </div>
   </section>
 
-  <p class="aclaracion">
-    Aclaración: Estos datos son para ponernos en contacto con usted y permitirnos tener una atención personalizada
-    para poder proporcionarle toda la información necesaria sobre su elección.
-    Muchas gracias por su tiempo y esperamos haber sido partícipes de la expansión de una familia.
-  </p>
+  <!-- FORMULARIO -->
+  <section class="form-container-section">
+    <div class="form-inner">
+
+      <div class="form-wrapper">
+        <form action="#" method="POST" class="adopcion-form">
+          <div class="form-raw">
+            <div class="form-group">
+              <label for="nombreApellido"></label>
+              <input type="text" id="nombreApellido" name="nombreApellido" placeholder="Nombre y apellido" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono"></label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="direccion"></label>
+            <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje"></label>
+            <textarea id="mensaje" name="mensaje" placeholder="Mensaje opcional"></textarea>
+          </div>
+
+          <p class="form-aclaracion">
+            <strong>IMPORTANTE:</strong> Completar este formulario no garantiza la adopción inmediata. 
+            Nuestro equipo revisará tus datos y se pondrá en contacto para coordinar una entrevista.
+          </p>
+
+          <button type="submit" class="btn-enviar">Enviar</button>
+
+        </form>
+      </div>
+
+      <div class="form-image-wrapper">
+        <!-- ID agregado para seleccionarlo con JS -->
+        <img id="form-animal-img" src="" alt="Animal seleccionado" onerror="this.src='https://placehold.co/500x600?text=Foto+Adopción'">
+      </div>
+
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -99,6 +129,56 @@
     hamburger.addEventListener('click', () => {
       mainNav.classList.toggle('active');
       hamburger.classList.toggle('open');
+    });
+
+    // 2. BASE DE DATOS DE ANIMALES (Misma que en la página anterior)
+    const animalesData = {
+      'juana': {
+        nombre: 'Juana', // Nombre corto para usar en el form o título
+        imagen: 'Imágenes/Adopciones/Juana.jpg' 
+      },
+      'simpa': {
+        nombre: 'Simpa',
+        imagen: 'Imágenes/Adopciones/Simpa.jpg'
+      },
+      'maddie': {
+        nombre: 'Maddie',
+        imagen: 'Imágenes/Adopciones/Maddie.jpg'
+      }
+    };
+
+    // 3. LÓGICA DE CARGA DINÁMICA
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const animalId = getQueryParam('id');
+      const imgElement = document.getElementById('form-animal-img');
+      const hiddenInput = document.getElementById('animal-interes');
+      // Opcional: Cambiar título del hero
+      // const heroTitle = document.getElementById('hero-title'); 
+
+      // Si hay ID y existe en la base de datos
+      if (animalId && animalesData[animalId]) {
+        const animal = animalesData[animalId];
+        
+        // Cargar imagen específica
+        imgElement.src = animal.imagen;
+        
+        // (Opcional) Pre-llenar campo oculto para saber a quién quieren adoptar
+        if (hiddenInput) hiddenInput.value = animal.nombre;
+        
+        // (Opcional) Cambiar título: "Formulario para adoptar a Juana"
+        // if (heroTitle) heroTitle.textContent = `Adoptar a ${animal.nombre}`;
+
+      } else {
+        // Fallback: Si no hay ID, mostrar una imagen por defecto o la de Juana
+        const defaultAnimal = animalesData['juana'];
+        imgElement.src = defaultAnimal.imagen;
+        if (hiddenInput) hiddenInput.value = defaultAnimal.nombre;
+      }
     });
   </script>
 </body>

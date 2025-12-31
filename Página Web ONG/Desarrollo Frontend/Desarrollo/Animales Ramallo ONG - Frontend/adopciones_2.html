@@ -30,10 +30,10 @@
       <nav class="main-nav" id="main-nav">
         <ul>
           <li>
-            <a href="index.html" class="active">Inicio</a>
+            <a href="index.html">Inicio</a>
           </li>
           <li>
-            <a href="adopciones_1.html">Adopciones</a>
+            <a href="adopciones_1.html" class="active">Adopciones</a>
           </li>
           <li>
             <a href="noticias.html">Noticias</a>
@@ -73,7 +73,7 @@
           
           <!-- Botón -->
            <div class="btn-ayuda-container">
-            <a href="adopciones_3.html" class="btn-ayuda">¡Adopto!</a>
+            <a href="#" id="btn-adoptar-link" class="btn-ayuda">¡Adopto!</a>
            </div>
         </div>
     </div>
@@ -156,30 +156,41 @@
       }
     };
 
-    // 3. CARGAR DATOS
+    // 3. LÓGICA DE CARGA Y ENLACE DINÁMICO
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(param);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      // Obtenemos el ID de la URL (ej: ?id=simpa)
       const animalId = getQueryParam('id');
       
       const nameElement = document.getElementById('animal-name');
       const descElement = document.getElementById('animal-desc');
+      const btnAdoptar = document.getElementById('btn-adoptar-link'); // Nuevo elemento a modificar
+      
       const img1 = document.getElementById('gallery-img-1');
       const img2 = document.getElementById('gallery-img-2');
       const img3 = document.getElementById('gallery-img-3');
 
-      // Si no hay ID, carga Juana por defecto
-      const animal = (animalId && animalesData[animalId]) ? animalesData[animalId] : animalesData['juana'];
+      // Si no hay ID, o no existe, usa 'juana' por defecto
+      const currentId = (animalId && animalesData[animalId]) ? animalId : 'juana';
+      const animal = animalesData[currentId];
 
+      // Llenamos los datos
       if(nameElement) nameElement.textContent = animal.nombre;
       if(descElement) descElement.innerHTML = animal.descripcion;
       
+      // Galería
       if(img1) img1.src = animal.galeria[0];
       if(img2) img2.src = animal.galeria[1];
       if(img3) img3.src = animal.galeria[2];
+
+      // **CLAVE:** Actualizamos el enlace del botón para pasar el ID a la siguiente página
+      if(btnAdoptar) {
+        btnAdoptar.href = `adopciones_3.html?id=${currentId}`;
+      }
     });
   </script>
 </body>
