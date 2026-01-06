@@ -1,0 +1,230 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noticias - Animales Ramallo</title>
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+         <img src="img/logo ONG.jpg" alt="Animales Ramallo Logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block'">
+         <span class="logo-text" style="display:none; font-family: 'Fredoka One'; font-size: 24px; color: var(--orange-primary);">AR</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="adopciones_1.html" >Adopciones</a>
+          </li>
+          <li>
+            <a href="noticias_1.html" class="active">Noticias</a>
+          </li>
+          <li>
+            <a href="historias.html">Historias</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
+          
+          <!-- Botón Donar Móvil -->
+          <li class="mobile-donar">
+             <a href="#" class="btn-donar">DONAR AQUÍ</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botón Donar Desktop -->
+      <div class="header-actions">
+        <a href="#" class="btn-donar">DONAR AQUÍ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION NOTICIAS -->
+  <section class="hero-noticias-section">
+    <div class="hero-inner">
+      <h1>Noticias</h1>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRINCIPAL: CONTENIDO + SIDEBAR -->
+  <section class="detalle-noticia-section">
+    <div class="layout-noticia-inner">
+      
+      <!-- COLUMNA IZQUIERDA: DETALLE DE LA NOTICIA -->
+      <!-- Sin estilo de tarjeta, directo al grano -->
+      <article class="noticia-principal-content">
+        
+        <!-- 1. Imagen (Arriba de todo) -->
+        <div class="detalle-img-full">
+          <img id="noticia-img" src="" alt="Imagen de la noticia" onerror="this.src='https://placehold.co/800x400?text=Cargando...'">
+        </div>
+
+        <!-- 2. Título y Fecha -->
+        <div class="noticia-header-block">
+          <h2 id="noticia-titulo">Cargando título...</h2>
+          <p class="detalle-fecha" id="noticia-fecha">Cargando fecha...</p>
+        </div>
+
+        <!-- 3. Cuerpo del Texto -->
+        <div class="noticia-cuerpo-texto" id="noticia-texto">
+          <!-- Se insertará dinámicamente -->
+        </div>
+
+        <!-- 4. Botón Volver -->
+        <div class="noticia-action-area">
+          <a href="noticias_1.html" class="btn-volver">Volver a Noticias</a>
+        </div>
+
+      </article>
+
+      <!-- COLUMNA DERECHA: NOTICIAS RECIENTES (SIDEBAR) -->
+      <aside class="sidebar-noticias">
+        <h3 class="sidebar-title">Noticias Recientes</h3>
+        
+        <div class="lista-recientes">
+          
+          <!-- Reciente 1 -->
+          <a href="noticias_2.html?id=noticia_1" class="card-reciente-link">
+            <article class="card-reciente">
+              <div class="reciente-img">
+                <img src="Imágenes/Noticias/Noticia 1.png" alt="Reciente 1" onerror="this.src='https://placehold.co/100x100?text=Foto'">
+              </div>
+              <div class="reciente-info">
+                <h4>Castraciones para perros y gatos</h4>
+                <span class="leer-mas-small">Leer más &rarr;</span>
+              </div>
+            </article>
+          </a>
+
+          <!-- Reciente 2 -->
+          <a href="noticias_2.html?id=noticia_2" class="card-reciente-link">
+            <article class="card-reciente">
+              <div class="reciente-img">
+                <img src="Imágenes/Noticias/Noticia 2.png" alt="Reciente 2" onerror="this.src='https://placehold.co/100x100?text=Foto'">
+              </div>
+              <div class="reciente-info">
+                <h4>Jornada de adopción en la plaza</h4>
+                <span class="leer-mas-small">Leer más &rarr;</span>
+              </div>
+            </article>
+          </a>
+
+          <!-- Reciente 3 -->
+          <a href="noticias_2.html?id=noticia_3" class="card-reciente-link">
+            <article class="card-reciente">
+              <div class="reciente-img">
+                <img src="Imágenes/Noticias/Noticia 3.png" alt="Reciente 3" onerror="this.src='https://placehold.co/100x100?text=Foto'">
+              </div>
+              <div class="reciente-info">
+                <h4>Convocatoria para nuevos voluntarios</h4>
+                <span class="leer-mas-small">Leer más &rarr;</span>
+              </div>
+            </article>
+          </a>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Copyright © 2025 Animales Ramallo | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // 1. MENU HAMBURGUESA
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+
+    // 2. BASE DE DATOS DE NOTICIAS
+    const noticiasData = {
+      'noticia_1': {
+        titulo: 'Castraciones para perros y gatos a bajo costo',
+        fecha: 'Marzo 15, 2025',
+        imagen: 'Imágenes/Noticias/Noticia 1.png',
+        cuerpo: `
+          <p>Este fin de semana estaremos realizando una jornada de castraciones a bajo costo en el club del barrio. Es fundamental reservar turno con anticipación para asegurar el lugar de tu mascota.</p>
+          <p>La castración es la única manera ética y efectiva de controlar la sobrepoblación animal. Además, trae múltiples beneficios para la salud de tu mascota, previniendo enfermedades y mejorando su comportamiento.</p>
+          <p><strong>Requisitos:</strong> Acercate con tu mascota con 8 horas de ayuno sólido y líquido. Los perros deben ir con correa y los gatos en transportadora o bolsa de red. ¡Te esperamos para cuidar juntos a nuestros animales!</p>
+        `
+      },
+      'noticia_2': {
+        titulo: 'Jornada de adopción en la plaza principal',
+        fecha: 'Abril 02, 2025',
+        imagen: 'Imágenes/Noticias/Noticia 2.png',
+        cuerpo: `
+          <p>¡Vení a conocer a tu próximo mejor amigo! Estaremos este domingo en la plaza principal con nuestros perros que buscan un hogar para toda la vida.</p>
+          <p>Habrá un stand informativo donde podrás aprender sobre tenencia responsable, cuidados básicos y cómo colaborar con nuestra causa. Si no podés adoptar en este momento, podés ayudarnos siendo hogar de tránsito o donando alimento.</p>
+          <p>¡No te lo pierdas! Habrá música, sorteos y mucho amor peludo esperando por vos.</p>
+        `
+      },
+      'noticia_3': {
+        titulo: 'Convocatoria para nuevos voluntarios',
+        fecha: 'Abril 10, 2025',
+        imagen: 'Imágenes/Noticias/Noticia 3.png',
+        cuerpo: `
+          <p>¿Amás a los animales y querés hacer la diferencia real? ¡Sumate a nuestro equipo de voluntarios! Estamos buscando personas con gran corazón.</p>
+          <p>Necesitamos ayuda en diversas áreas: paseos de los perros del refugio, limpieza y mantenimiento de caniles, traslados al veterinario y organización de eventos de recaudación.</p>
+          <p>No se necesita experiencia previa, solo compromiso y ganas de ayudar. Escribinos a nuestro contacto para más información sobre las charlas de capacitación que daremos la próxima semana.</p>
+        `
+      }
+    };
+
+    // 3. LÓGICA DE CARGA
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const noticiaId = getQueryParam('id');
+      
+      const tituloEl = document.getElementById('noticia-titulo');
+      const fechaEl = document.getElementById('noticia-fecha');
+      const imgEl = document.getElementById('noticia-img');
+      const textoEl = document.getElementById('noticia-texto');
+
+      if (noticiaId && noticiasData[noticiaId]) {
+        const data = noticiasData[noticiaId];
+        
+        tituloEl.textContent = data.titulo;
+        fechaEl.textContent = data.fecha;
+        imgEl.src = data.imagen;
+        textoEl.innerHTML = data.cuerpo;
+        
+        document.title = `Noticia - ${data.titulo}`;
+      } else {
+        // Fallback
+        tituloEl.textContent = "Noticia no encontrada";
+        fechaEl.textContent = "";
+        textoEl.innerHTML = "<p>Lo sentimos, no pudimos encontrar la noticia que buscas. Regresa al listado para ver más opciones.</p>";
+      }
+    });
+  </script>
+</body>
+</html>
