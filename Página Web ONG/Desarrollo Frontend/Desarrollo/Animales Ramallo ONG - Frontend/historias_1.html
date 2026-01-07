@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- Historias de adopción -->
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Historias - Animales Ramallo</title><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+         <img src="img/logo ONG.jpg" alt="Animales Ramallo Logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block'">
+         <span class="logo-text" style="display:none; font-family: 'Fredoka One'; font-size: 24px; color: var(--orange-primary);">AR</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="adopciones_1.html" >Adopciones</a>
+          </li>
+          <li>
+            <a href="noticias_1.html">Noticias</a>
+          </li>
+          <li>
+            <a href="historias_1.html" class="active">Historias</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
+          
+          <!-- Botón Donar Móvil -->
+          <li class="mobile-donar">
+             <a href="#" class="btn-donar">DONAR AQUÍ</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botón Donar Desktop -->
+      <div class="header-actions">
+        <a href="#" class="btn-donar">DONAR AQUÍ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION NOTICIAS -->
+  <section class="hero-historias-section">
+    <div class="hero-inner">
+      <h1>Historias</h1>
+    </div>
+  </section>
+
+  <section id="historias" class="historias-section">
+    <div class="grid-historias">
+      
+      <!-- Historia 1 -->
+      <article class="card-historias">
+        <div class="card-img-container-historias">
+          <img src="Imágenes/Historias/Sarni 1.png" alt="Sarni" onerror="this.src='https://placehold.co/400x300?text=Noticia+1'">
+        </div>
+        
+        <div class="historias-content">
+          <h3>Conocé a Sarni</h3>
+          <a href="historias_2.html?id=sarni" class="btn-leer-historias">Leer historia</a>
+        </div>
+      </article>
+
+      <!-- Historia 2 -->
+      <article class="card-historias">
+        <div class="card-img-container-historias">
+          <img src="Imágenes/Historias/Scooby.png" alt="Scooby" onerror="this.src='https://placehold.co/400x300?text=Noticia+1'">
+        </div>
+        
+        <div class="historias-content">
+          <h3>Conocé a Scooby</h3>
+          <a href="historias_2.html?id=scooby" class="btn-leer-historias">Leer historia</a>
+        </div>
+      </article>
+
+      <!-- Historia 3 -->
+      <article class="card-historias">
+        <div class="card-img-container-historias">
+          <img src="Imágenes/Historias/Dalila.png" alt="Dalila" onerror="this.src='https://placehold.co/400x300?text=Noticia+1'">
+        </div>
+        
+        <div class="historias-content">
+          <h3>Conocé a Dalila</h3>
+          <a href="historias_2.html?id=dalila" class="btn-leer-historias">Leer historia</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Copyright © 2025 Animales Ramallo | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

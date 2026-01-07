@@ -1021,6 +1021,206 @@ ul {
 
 /* -------------------------------------------------------------------------------------------- */
 
+/* SECCIÓN HISTORIAS */
+/*  1. HERO SECTION NOTICIAS */
+.hero-historias-section {
+  background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary)), 
+              url('Hero Section.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: var(--pure-white);
+  padding: 50px 20px 50px 20px; 
+  position: relative;
+  text-align: center;
+}
+
+.hero-historias-section .hero-inner {
+  display: block;
+  text-align: center;
+}
+
+.hero-historias-section h1 {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 2. TARJETAS DE HISTORIAS */
+.historias-section { 
+  padding: 80px 20px 60px 20px; 
+  text-align: center; /* Alinear el contenido al centro para que el grid se vea bien */
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.grid-historias { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 100px; /* Espacio entre tarjetas */
+}
+
+.card-historias { 
+  background: var(--pure-white); 
+  border-radius: 20px; 
+  width: 320px; 
+  border: 2px solid var(--orange-primary); 
+  padding: 25px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; /* Distancia igual entre elementos */
+  align-items: center; /* Centrar elementos horizontalmente */
+  transition: transform 0.3s ease; 
+}
+
+.card-historias:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-img-container-historias {
+  width: 100%; 
+  height: 250px; 
+  border-radius: 15px; 
+  overflow: hidden; 
+}
+
+.card-img-container-historias img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.historias-content {
+  width: 100%;
+  text-align: center; /* Alinear el texto a la izquierda para mejor lectura */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-historias h3 { 
+  font-family: var(--font-body); 
+  font-size: 18px; 
+  color: var(--dark-text); 
+  margin: 0;
+  line-height: 1.3;
+}
+
+.btn-leer-historias { 
+  background-color: var(--pure-white); 
+  color: var(--orange-primary); 
+  padding: 10px 25px; 
+  border: 2px solid var(--orange-primary); 
+  border-radius: 50px; 
+  font-weight: 700; 
+  font-size: 14px; 
+  text-align: center; 
+  margin-top: auto; /* Empuja el botón al final si hay espacio extra */
+  text-transform: uppercase; 
+  transition: all 0.3s ease; 
+  align-self: center; /* Centrar el botón en la tarjeta */
+  display: inline-block;
+}
+
+.btn-leer-historias:hover { 
+  background-color: var(--orange-primary); 
+  color: var(--pure-white); 
+  border: 2px solid var(--orange-primary); 
+}
+
+/* DETALLE HISTORIA (Historias 2) */
+
+/* Contenedor principal para centrar el contenido */
+.layout-historias-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Título del Animal */
+.historias-header-block {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.historias-header-block h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Párrafo de Historia */
+.historias-cuerpo-texto {
+  max-width: 1000px;
+  margin: 0 auto 40px auto; 
+  text-align: left;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.historias-cuerpo-texto p {
+  margin-bottom: 15px;
+}
+
+/* 3. Galería de 3 Imágenes (Alineadas) */
+.historias-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+/* Estilo de cada tarjeta de imagen */
+.historias-img-item {
+  width: 100%;
+  height: 300px; /* Altura fija para uniformidad */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.historias-img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+  transition: transform 0.3s ease;
+}
+
+.historias-img-item img:hover {
+  transform: scale(1.05); /* Zoom suave al pasar el mouse */
+}
+
+/* Botón Volver */
+.historias-action-area {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+  text-align: center; 
+}
+
+.btn-volver {
+  display: inline-block;
+  color: var(--orange-primary);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 2px solid var(--orange-primary);
+  padding: 10px 30px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: var(--orange-primary);
+  color: var(--pure-white);
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
 /* FOOTER */
 .site-footer {
   background-color: var(--orange-primary);
@@ -1197,5 +1397,10 @@ ul {
   
   .noticia-header-block h2 {
     font-size: 32px;
+  }
+
+  .historias-gallery-grid {
+    grid-template-columns: 1fr; /* 1 sola columna en móvil */
+    height: auto;
   }
 }
