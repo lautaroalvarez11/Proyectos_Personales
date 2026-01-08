@@ -53,66 +53,91 @@
     </div>
   </section>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <section id="contacto" class="contacto-section">
-    <div class="contacto-info">
-      <h3>¿Cómo contactarnos?</h3>
-      <p>Si querés sumarte, adoptar, colaborar o simplemente conocer más sobre nuestro trabajo, podés comunicarte con nosotros
-      a través de los medios disponibles.
-      </p><br>
-      <p>Cada mensaje, consulta o aporte nos ayuda a seguir cambiando vidas ❤️</p>
-    </div>
-
-    <div class="email-telefono">
-      <div class="email-info">
-        <img src="Imágenes/Contacto/Arroba.png" alt="arroba" onerror="this.src='https://placehold.co/50x50?text=arroba'" class="icono-contacto">
-        <h3>Email:</h3>
-        <p>email@animalesramallo.ong</p>
-      </div>
+  <!-- SECCIÓN CONTACTO -->
+  <section class="contacto-layout">
+    <div class="contacto-main-container">
       
-      <div class="telefono-info">
-        <img src="Imágenes/Contacto/Teléfono.png" alt="teléfono" onerror="this.src='https://placehold.co/50x50?text=teléfono'" class="icono-contacto">
-        <h3>Teléfono:</h3>
-        <p>123-4567890</p>
-      </div>
-    </div>
-  </section>
+      <div class="columna-info">
+        
+        <div class="intro-text">
+          <h2>¿Cómo contactarnos?</h2>
+          <p>Si querés sumarte, adoptar, colaborar o simplemente conocer más sobre nuestro trabajo, podés comunicarte con nosotros a través de los medios disponibles.</p>
+          <p>Cada mensaje, consulta o aporte nos ayuda a seguir cambiando vidas.</p>
+        </div>
 
-  <section class="formulario-section">
-    <div class="form-inner">
-      <div class="form-wrapper">
-        <form action="#" method="POST" class="adopcion-form">
-
-          <div class="form-raw">
-            <div class="form-group">
-              <label for="nombre"></label>
-              <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
+        <div class="contact-cards-container">
+          
+          <div class="contact-card">
+            <div class="icon-box">
+               <img src="Imágenes/Contacto/Arroba.png" alt="@" onerror="this.src='https://placehold.co/40?text=@'">
+            </div>
+            <div class="card-text">
+              <h4>Email:</h4>
+              <p>emailanimalesramallo@gmail.com</p>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="apellido"></label>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="telefono"></label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+          <div class="contact-card">
+            <div class="icon-box">
+              <img src="Imágenes/Contacto/Teléfono.png" alt="Tel" onerror="this.src='https://placehold.co/40?text=Tel'">
+            </div>
+            <div class="card-text">
+              <h4>Teléfono:</h4>
+              <p>123 4567890</p>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="mensaje"></label>
-            <textarea id="mensaje" name="mensaje" placeholder="Mensaje opcional"></textarea>
-          </div>
+        </div>
 
-          <button type="submit" class="btn-enviar">Enviar</button>
+        <div class="social-location-container">
+            <a href="#" class="social-item">
+              <img src="Imágenes/Contacto/Instagram.png" alt="IG" onerror="this.src='https://placehold.co/30?text=IG'">
+            </a>
 
-        </form>
+            <a href="#" class="social-item">
+              <img src="Imágenes/Contacto/Facebook.png" alt="FB" onerror="this.src='https://placehold.co/30?text=FB'">
+            </a>
+            
+            <a href="#" class="social-item location-item">
+              <img src="Imágenes/Contacto/Ubicación.png" alt="Pin" onerror="this.src='https://placehold.co/20?text=Pin'">
+              <span class="location-text">Ramallo, Provincia de Buenos Aires</span>
+            </a>
+        </div>
+
+      </div>
+
+      <div class="columna-form">
+        <div class="form-box-border"> <form action="#" method="POST" class="contacto-form">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar-contacto">Enviar</button>
+
+          </form>
+
+        </div>
+      </div>
+
     </div>
   </section>
 

@@ -1248,8 +1248,207 @@ ul {
 }
 
 /* 2. CONTENIDO PRINCIPAL CONTACTO */
+/* Layout Principal: Dos Columnas */
+.contacto-layout {
+  padding: 80px 20px;
+  background-color: var(--white-bg);
+}
+
+.contacto-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px; /* Espacio entre la columna de info y el formulario */
+  align-items: flex-start;
+}
+
+/* --- COLUMNA IZQUIERDA: INFORMACIÓN --- */
+.columna-info {
+  flex: 1; /* Ocupa el 50% aprox */
+  padding-right: 20px;
+}
+
+.intro-text h2 {
+  font-family: var(--font-heading); /* Fredoka One */
+  font-size: 32px;
+  color: var(--dark-text);
+  margin-bottom: 25px;
+}
+
+.intro-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666; /* Gris suave */
+  margin-bottom: 15px;
+}
+
+/* Tarjetas de Email y Teléfono */
+.contact-cards-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #FDF2F0; /* Fondo rosado/gris muy suave */
+  border: 1px solid var(--orange-secondary); /* Borde naranja rojizo */
+  border-radius: 15px;
+  padding: 20px 25px;
+  transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateX(5px);
+}
+
+/* Iconos de las tarjetas (Círculo rojo/naranja) */
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: var(--orange-secondary);
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.icon-box img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Vuelve el icono blanco */
+}
+
+.card-text h4 {
+  font-size: 18px;
+  color: var(--dark-text);
+  margin-bottom: 5px;
+}
+
+.card-text p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+/* Redes Sociales y Ubicación (Abajo a la izquierda) */
+.social-location-container {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Distancia igual entre todos los elementos (IG, FB, Ubicación) */
+  flex-wrap: wrap;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-item:hover {
+  transform: scale(1.1); /* Efecto zoom al pasar el mouse */
+}
+
+.social-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Estilo específico para el texto de la ubicación */
+.location-item {
+  gap: 10px; /* Espacio entre el pin y el texto */
+}
+
+.location-text {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
 
 /* 3. FORMULARIO DE CONTACTO */
+.columna-form {
+  flex: 1; /* Ocupa el otro 50% */
+}
+
+/* Caja contenedora del formulario (Borde naranja grande) */
+.form-box-border {
+  background-color: transparent;
+  border: 1px solid var(--orange-secondary);
+  border-radius: 20px;
+  padding: 40px;
+}
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Filas de inputs (Nombre/Apellido, etc) */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1; /* Que ocupen 50% cada uno */
+}
+
+/* Estilos de los inputs */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: #F5F0F0; /* Fondo grisáceo del input */
+  border: 1px solid var(--orange-secondary);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Estilo para que el textarea ocupe todo el ancho */
+.full-width {
+  width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #888;
+}
+
+/* Botón Enviar */
+.btn-enviar-contacto {
+  background-color: var(--orange-primary);
+  color: var(--pure-white);
+  padding: 10px 40px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-start; /* Alineado a la izquierda */
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: auto; 
+  display: inline-block;
+}
+
+.btn-enviar-contacto:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 
 /* -------------------------------------------------------------------------------------------- */
 
@@ -1434,5 +1633,54 @@ ul {
   .historias-gallery-grid {
     grid-template-columns: 1fr; /* 1 sola columna en móvil */
     height: auto;
+  }
+
+  /* 1. Layout general: Apilar columnas */
+  .contacto-main-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* 2. Columna Info: Texto Centrado */
+  .columna-info {
+    padding-right: 0;
+    text-align: center; /* Alineación centrada como en la imagen */
+  }
+  
+  .intro-text h2, 
+  .intro-text p {
+    text-align: center;
+  }
+
+  /* 3. Tarjetas de Contacto: Texto alineado a la izquierda internamente */
+  .contact-card {
+    justify-content: flex-start; 
+    text-align: left;
+  }
+
+  /* 4. Iconos Sociales: Centrados */
+  .social-location-container {
+    justify-content: left; /* Centra los íconos y la ubicación */
+    margin-bottom: 20px;
+  }
+
+  /* 5. FORMULARIO: MANTENER FILAS (Nombre/Apellido lado a lado) */
+  .form-box-border {
+    padding: 20px; /* Padding reducido para ganar espacio */
+  }
+
+  .form-row {
+    flex-direction: row; /* IMPORTANTE: Mantiene los inputs lado a lado */
+    gap: 10px; /* Reducir el espacio entre ellos para que entren bien */
+  }
+  
+  .form-group input {
+    padding: 12px 10px; /* Un poco menos de relleno interno */
+    font-size: 14px; /* Letra un poco más chica para evitar cortes */
+  }
+
+  .btn-enviar-contacto {
+    width: auto;
+    align-self: flex-start;
   }
 }
