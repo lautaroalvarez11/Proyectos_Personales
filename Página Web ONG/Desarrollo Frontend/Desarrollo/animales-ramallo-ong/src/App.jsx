@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -13,10 +13,25 @@ import AdopcionesLista from './pages/AdopcionesLista';
 import AdopcionDetalle from './pages/AdopcionesDetalle';
 import AdopcionForm from './pages/AdopcionForm';
 
+import Login from './pages/admin/Login';
+import PanelControl from './pages/admin/PanelControl';
+import MenuAdopciones from './pages/admin/adopciones/MenuAdopciones';
+import AltaAdopcion from './pages/admin/Adopciones/AltaAdopcion';
+
 function App() {
+  const location = useLocation();
+  
+  // Verificamos si estamos en la página de login o en el panel admin para ocultar Header y Footer
+  const isHiddenPage = location.pathname === '/login' || 
+                       location.pathname === '/admin/panel' ||
+                       location.pathname === '/admin/adopciones' ||
+                       location.pathname === '/admin/adopciones/alta';
+
   return (
     <>
-      <Header />
+      {/* Solo mostrar el Header si NO se está en login o panel admin */}
+      {!isHiddenPage && <Header />}
+      
       <main>
         <Routes>
           <Route path="/" element={<Inicio />} />
@@ -34,9 +49,17 @@ function App() {
           <Route path="/adopciones" element={<AdopcionesLista />} />
           <Route path="/adopciones/detalle/:id" element={<AdopcionDetalle />} />
           <Route path="/adopciones/formulario/:id" element={<AdopcionForm />} />
+
+          {/* RUTA DEL ADMIN */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin/panel" element={<PanelControl />} />
+          <Route path="/admin/adopciones" element={<MenuAdopciones />} />
+          <Route path="/admin/adopciones/alta" element={<AltaAdopcion />} />
         </Routes>
       </main>
-      <Footer />
+
+      {/* Solo mostrar el Footer si NO se está en login */}
+      {!isHiddenPage && <Footer />}
     </>
   );
 }

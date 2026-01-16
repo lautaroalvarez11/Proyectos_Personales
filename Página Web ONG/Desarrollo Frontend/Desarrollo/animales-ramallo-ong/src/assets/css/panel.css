@@ -1,0 +1,312 @@
+:root {
+  --orange-primary: #FE6416;
+  --bg-pink: #FDF2F0;
+  --font-heading: 'DynaPuff', cursive;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+/* Fondo general de la página */
+.panel-page {
+  background-color: var(--bg-pink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+}
+
+/* Encabezado Superior */
+.panel-header {
+  background-color: var(--orange-primary);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.panel-header h1 {
+  color: white;
+  font-family: var(--font-heading);
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+/* Contenedor central */
+.panel-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* La Grilla de Botones PANEL DE CONTROL (MenuAdopciones.jsx) */
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 80px;
+  max-width: 950px;
+  width: 100%;
+}
+
+/* La Grilla de Botones TARJETAS */
+.panel-grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
+  max-width: 1300px;
+  width: 100%;
+}
+
+/* Estilo de cada Tarjeta/Botón */
+.panel-card {
+  background-color: var(--orange-primary);
+  border-radius: 15px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 8px 15px rgba(254, 100, 22, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 20px;
+}
+
+.panel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(254, 100, 22, 0.3);
+  background-color: #e65a12;
+}
+
+/* Texto dentro del botón */
+.panel-card-text {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Estilo del botón SALIR (MenuAdopciones.jsx) */
+.panel-card-salir {
+  background-color: var(--orange-primary);
+  border-radius: 15px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 8px 15px rgba(254, 100, 22, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 20px;
+}
+
+.panel-card-salir:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(254, 100, 22, 0.3);
+  background-color: #e65a12;
+}
+
+/* Texto dentro del botón */
+.panel-card-salir-text {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ALTA ADOPCION */
+
+/* Contenedor general */
+.admin-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Título fuera de la tarjeta */
+.admin-page-title {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 2px;
+}
+
+.admin-form-card {
+  border: 1px solid var(--orange-secondary); 
+  border-radius: 15px;
+  padding: 40px;
+  background-color: transparent; 
+  margin-bottom: 30px;
+}
+
+/* Layout del Formulario */
+.admin-form-layout {
+  display: flex;
+  gap: 60px;
+}
+
+.admin-form-left {
+  flex: 1.5; /* La parte de texto ocupa un poco más */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs y Textarea */
+.admin-input, 
+.admin-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--orange-secondary);
+  border-radius: 8px;
+  background-color: #FDF2F0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  outline: none;
+  color: #444;
+}
+
+.admin-input:focus, 
+.admin-textarea:focus {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(236, 50, 21, 0.2);
+}
+
+.admin-textarea {
+  height: 250px;
+  resize: none;
+}
+
+/* Etiquetas (Labels) */
+.admin-input-group label, 
+.admin-label-images {
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Cajas de Subida de Imágenes */
+.admin-images-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.image-upload-box {
+  width: 130px; /* Más grandes */
+  height: 120px;
+  background-color: var(--orange-primary); 
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.image-upload-box:hover {
+  transform: translateY(-3px);
+  background-color: #e65a12;
+}
+
+/* Texto dentro de la caja naranja */
+.placeholder-text {
+  color: #444;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.upload-label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.plus-icon {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  line-height: 0;
+  margin-top: -5px;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botón Cargar */
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-admin-submit {
+  background-color: var(--orange-primary);
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 10px 60px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-admin-submit:hover {
+  transform: translateY(-2px);
+  background-color: #e65a12;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .panel-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .panel-card {
+    aspect-ratio: auto;
+    min-height: 120px;
+  }
+
+  .panel-card-salir {
+    aspect-ratio: auto;
+    min-height: 120px;
+  }
+
+  /* ALTA ADOPCION */
+  .admin-form-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .admin-images-grid {
+    justify-content: space-between;
+  }
+  .image-upload-box {
+    width: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+}
