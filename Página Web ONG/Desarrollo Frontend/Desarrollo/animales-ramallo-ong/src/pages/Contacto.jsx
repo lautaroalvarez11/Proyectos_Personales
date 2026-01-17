@@ -37,9 +37,9 @@ const Contacto = () => {
               </div>
             </div>
             <div className="social-location-container">
-                <a href="#" className="social-item"><img src="/Imágenes/Contacto/Instagram.png" alt="IG" /></a>
-                <a href="#" className="social-item"><img src="/Imágenes/Contacto/Facebook.png" alt="FB" /></a>
-                <a href="#" className="social-item location-item">
+                <a href="https://www.instagram.com/onganimalesramallo/" target="_blank" className="social-item"><img src="/Imágenes/Contacto/Instagram.png" alt="IG" /></a>
+                <a href="https://www.facebook.com/maria.ayuda.56/?locale=es_LA" target="_blank" className="social-item"><img src="/Imágenes/Contacto/Facebook.png" alt="FB" /></a>
+                <a href="https://www.google.com/maps/place/ramallo+buenos+aires/data=!4m2!3m1!1s0x95b9fca2f74ad067:0xf54b5dc7d1ce475a?sa=X&ved=1t:155783&ictx=111" className="social-item location-item" target="_blank">
                   <img src="/Imágenes/Contacto/Ubicación.png" alt="Pin" />
                   <span className="location-text">Ramallo, Provincia de Buenos Aires</span>
                 </a>

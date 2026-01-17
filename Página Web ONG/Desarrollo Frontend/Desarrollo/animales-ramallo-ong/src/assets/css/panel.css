@@ -162,6 +162,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 /* Inputs y Textarea */
@@ -275,38 +276,157 @@
   background-color: #e65a12;
 }
 
+/* MODIFICAR ADOPCIÓN */
+/* Estilo para el Dropdown/Select */
+.admin-select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--orange-secondary);
+  border-radius: 8px;
+  background-color: #FDF2F0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #444;
+  outline: none;
+  cursor: pointer;
+  
+  /* Para que se vea la flecha personalizada en algunos navegadores */
+  appearance: none; 
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23EC3215%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%;
+  background-size: 12px auto;
+}
+
+.admin-select:focus {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(236, 50, 21, 0.2);
+}
+
+/* BAJA ADOPCIÓN */
+/* Datos adoptante */
+.datos-adoptante {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 12px; 
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+/* Títulos de sección dentro del formulario (ej: "Datos del adoptante") */
+.admin-subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0,0,0,0.05); /* Línea sutil separadora */
+  padding-bottom: 5px;
+}
+
+/* Ajuste para que la columna derecha ocupe toda la altura disponible */
+.admin-form-right-full {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El Textarea de la derecha */
+.admin-textarea-large {
+  width: 100%;
+  flex: 1; /* Esto hace que se estire para ocupar todo el espacio vertical disponible */
+  min-height: 280px;
+  padding: 15px;
+  border: 1px solid var(--orange-secondary);
+  border-radius: 8px;
+  background-color: #FDF2F0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #444;
+  outline: none;
+  resize: vertical;
+}
+
+.admin-textarea-large:focus {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(236, 50, 21, 0.2);
+}
+
+/* Inputs del formulario */
+.admin-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--orange-secondary);
+  border-radius: 8px;
+  background-color: #FDF2F0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #444;
+  outline: none;
+  margin-bottom: 0; /* El margen lo maneja el contenedor */
+}
+
+.admin-input:focus {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(236, 50, 21, 0.2);
+}
+
+/* Botón Aceptar */
+.btn-accept {
+  background-color: var(--orange-primary);
+  color: white;
+  padding: 10px 50px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.btn-accept:hover {
+  transform: translateY(-2px);
+  background-color: #e65a12;
+}
+
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .panel-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+@media (max-width: 1024px) {
+  
+  /* Grilla de 2 columnas (2 arriba, 2 abajo) */
+  .panel-grid-tarjetas {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; /* Espacio equilibrado */
   }
 
-  .panel-card {
-    aspect-ratio: auto;
-    min-height: 120px;
+  /* Que el texto sea igual en TODAS las tarjetas */
+  .panel-card-text,
+  .panel-card-salir-text { 
+    font-size: 18px; /* Un poquito más chico para asegurar que entre bien */
+    width: 100%;     /* Que ocupe todo el ancho disponible */
+    display: block;
   }
-
+  
+  /* Ajuste de altura para que se vean uniformes */
+  .panel-card, 
   .panel-card-salir {
+    min-height: 140px;
     aspect-ratio: auto;
-    min-height: 120px;
-  }
-
-  /* ALTA ADOPCION */
-  .admin-form-layout {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .admin-images-grid {
-    justify-content: space-between;
-  }
-  .image-upload-box {
-    width: 30%;
+    padding: 15px;
   }
 }
 
-@media (max-width: 600px) {
-  .panel-grid {
-    grid-template-columns: 1fr;
+/* Para pantallas MUY pequeñas (Menos de 400px) */
+@media (max-width: 400px) {
+  .panel-grid-4 {
+    gap: 10px; /* Menos espacio entre tarjetas */
+  }
+  
+  .panel-card-text,
+  .panel-card-salir-text {
+    font-size: 16px; /* Letra un poco más chica para evitar cortes */
   }
 }

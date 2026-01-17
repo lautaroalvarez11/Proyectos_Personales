@@ -51,26 +51,28 @@ const AltaAdopcion = () => {
             </div>
 
             <div className="admin-form-right">
-              <label className="admin-label-images">Cargar imágenes</label>
-              <div className="admin-images-grid">
-                {[0, 1, 2].map((index) => (
-                  <div key={index} className="image-upload-box">
-                    <input 
-                      type="file" 
-                      accept="image/*" 
-                      id={`file-${index}`}
-                      onChange={(e) => handleImageChange(index, e)}
-                      hidden
-                    />
-                    <label htmlFor={`file-${index}`} className="upload-label">
-                      {imagenes[index] ? (
-                        <img src={imagenes[index]} alt="Preview" className="preview-img" />
-                      ) : (
-                        <span className="placeholder-text">Imagen {index + 1}</span>
-                      )}
-                    </label>
-                  </div>
-                ))}
+              <div> 
+                <label className="admin-label-images">Cargar imágenes</label>
+                <div className="admin-images-grid">
+                  {[0, 1, 2].map((index) => (
+                    <div key={index} className="image-upload-box">
+                      <input 
+                        type="file" 
+                        accept="image/*" 
+                        id={`file-${index}`}
+                        onChange={(e) => handleImageChange(index, e)}
+                        hidden
+                      />
+                      <label htmlFor={`file-${index}`} className="upload-label">
+                        {imagenes[index] ? (
+                          <img src={imagenes[index]} alt="Preview" className="preview-img" />
+                        ) : (
+                          <span className="placeholder-text">Imagen {index + 1}</span>
+                        )}
+                      </label>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </form>

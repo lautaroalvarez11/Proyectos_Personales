@@ -17,6 +17,8 @@ import Login from './pages/admin/Login';
 import PanelControl from './pages/admin/PanelControl';
 import MenuAdopciones from './pages/admin/adopciones/MenuAdopciones';
 import AltaAdopcion from './pages/admin/Adopciones/AltaAdopcion';
+import ModificarAdopcion from './pages/admin/Adopciones/ModificarAdopcion';
+import BajaAdopcion from './pages/admin/Adopciones/BajaAdopcion';
 
 function App() {
   const location = useLocation();
@@ -25,8 +27,9 @@ function App() {
   const isHiddenPage = location.pathname === '/login' || 
                        location.pathname === '/admin/panel' ||
                        location.pathname === '/admin/adopciones' ||
-                       location.pathname === '/admin/adopciones/alta';
-
+                       location.pathname === '/admin/adopciones/alta' ||
+                       location.pathname === '/admin/adopciones/modificar' ||
+                        location.pathname === '/admin/adopciones/baja';
   return (
     <>
       {/* Solo mostrar el Header si NO se está en login o panel admin */}
@@ -55,6 +58,8 @@ function App() {
           <Route path="/admin/panel" element={<PanelControl />} />
           <Route path="/admin/adopciones" element={<MenuAdopciones />} />
           <Route path="/admin/adopciones/alta" element={<AltaAdopcion />} />
+          <Route path="/admin/adopciones/modificar" element={<ModificarAdopcion />} />
+          <Route path="/admin/adopciones/baja" element={<BajaAdopcion />} />
         </Routes>
       </main>
 
