@@ -49,7 +49,7 @@
   width: 100%;
 }
 
-/* La Grilla de Botones TARJETAS */
+/* La Grilla de Botones TARJETAS dentro de cada sección del panel */
 .panel-grid-tarjetas {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
@@ -87,7 +87,7 @@
   line-height: 1.4;
 }
 
-/* Estilo del botón SALIR (MenuAdopciones.jsx) */
+/* Estilo del botón SALIR */
 .panel-card-salir {
   background-color: var(--orange-primary);
   border-radius: 15px;
@@ -116,8 +116,9 @@
   line-height: 1.4;
 }
 
-/* ALTA ADOPCION */
+/* ADMINISTRAR ADOPCIONES */
 
+/* ALTA ADOPCION */
 /* Contenedor general */
 .admin-container {
   max-width: 1100px;
@@ -392,6 +393,56 @@
   transform: translateY(-2px);
   background-color: #e65a12;
 }
+
+/* ----------------------------------------- */
+
+/* ADMINISTRAR NOTICIAS */
+
+/* ALTA NOTICIAS */
+.admin-form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+}
+
+/* Caja de subida de imagen ÚNICA y GRANDE */
+.image-upload-box-single {
+  width: 100%;
+  flex: 1; 
+  min-height: 250px; /* Una altura mínima por seguridad */
+  background-color: var(--orange-primary); 
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.image-upload-box-single:hover {
+  transform: translateY(-3px);
+  background-color: #e65a12;
+}
+
+.placeholder-text-large {
+  color: #444; 
+  font-weight: 700;
+  font-size: 18px; 
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: center; /* Esto centra el botón horizontalmente */
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* */
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {

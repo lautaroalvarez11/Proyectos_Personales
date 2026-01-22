@@ -19,17 +19,22 @@ import MenuAdopciones from './pages/admin/adopciones/MenuAdopciones';
 import AltaAdopcion from './pages/admin/Adopciones/AltaAdopcion';
 import ModificarAdopcion from './pages/admin/Adopciones/ModificarAdopcion';
 import BajaAdopcion from './pages/admin/Adopciones/BajaAdopcion';
+import MenuNoticias from './pages/admin/Noticias/MenuNoticias';
+import AltaNoticia from './pages/admin/Noticias/AltaNoticia';
 
 function App() {
   const location = useLocation();
   
   // Verificamos si estamos en la página de login o en el panel admin para ocultar Header y Footer
   const isHiddenPage = location.pathname === '/login' || 
-                       location.pathname === '/admin/panel' ||
-                       location.pathname === '/admin/adopciones' ||
-                       location.pathname === '/admin/adopciones/alta' ||
-                       location.pathname === '/admin/adopciones/modificar' ||
-                        location.pathname === '/admin/adopciones/baja';
+                      location.pathname === '/admin/panel' ||
+                      location.pathname === '/admin/adopciones' ||
+                      location.pathname === '/admin/adopciones/alta' ||
+                      location.pathname === '/admin/adopciones/modificar' ||
+                      location.pathname === '/admin/adopciones/baja' ||
+                      location.pathname === '/admin/noticias' ||
+                      location.pathname === '/admin/noticias/alta';
+
   return (
     <>
       {/* Solo mostrar el Header si NO se está en login o panel admin */}
@@ -60,6 +65,8 @@ function App() {
           <Route path="/admin/adopciones/alta" element={<AltaAdopcion />} />
           <Route path="/admin/adopciones/modificar" element={<ModificarAdopcion />} />
           <Route path="/admin/adopciones/baja" element={<BajaAdopcion />} />
+          <Route path="/admin/noticias" element={<MenuNoticias />} />
+          <Route path="/admin/noticias/alta" element={<AltaNoticia />} />
         </Routes>
       </main>
 
