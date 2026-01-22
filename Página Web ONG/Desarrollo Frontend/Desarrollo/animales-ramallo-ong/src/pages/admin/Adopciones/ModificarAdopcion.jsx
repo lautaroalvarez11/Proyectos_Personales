@@ -79,7 +79,7 @@ const ModificarAdopcion = () => {
             </div>
 
             {/* COLUMNA DERECHA: Nombre + Imágenes */}
-            <div className="admin-form-right">
+            <div className="admin-form-right right-column-aligned">
               
               {/* 3. Nombre (Input) */}
               <div className="admin-input-group">

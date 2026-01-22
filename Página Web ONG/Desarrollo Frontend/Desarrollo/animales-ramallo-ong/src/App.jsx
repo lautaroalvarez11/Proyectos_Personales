@@ -21,6 +21,8 @@ import ModificarAdopcion from './pages/admin/Adopciones/ModificarAdopcion';
 import BajaAdopcion from './pages/admin/Adopciones/BajaAdopcion';
 import MenuNoticias from './pages/admin/Noticias/MenuNoticias';
 import AltaNoticia from './pages/admin/Noticias/AltaNoticia';
+import ModificarNoticia from './pages/admin/Noticias/ModificarNoticia';
+import BajaNoticia from './pages/admin/Noticias/BajaNoticia';
 
 function App() {
   const location = useLocation();
@@ -33,7 +35,9 @@ function App() {
                       location.pathname === '/admin/adopciones/modificar' ||
                       location.pathname === '/admin/adopciones/baja' ||
                       location.pathname === '/admin/noticias' ||
-                      location.pathname === '/admin/noticias/alta';
+                      location.pathname === '/admin/noticias/alta' ||
+                      location.pathname === '/admin/noticias/modificar' ||
+                      location.pathname === '/admin/noticias/baja';
 
   return (
     <>
@@ -67,6 +71,8 @@ function App() {
           <Route path="/admin/adopciones/baja" element={<BajaAdopcion />} />
           <Route path="/admin/noticias" element={<MenuNoticias />} />
           <Route path="/admin/noticias/alta" element={<AltaNoticia />} />
+          <Route path="/admin/noticias/modificar" element={<ModificarNoticia />} />
+          <Route path="/admin/noticias/baja" element={<BajaNoticia />} />
         </Routes>
       </main>
 
