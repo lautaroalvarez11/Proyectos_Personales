@@ -15,21 +15,30 @@ import AdopcionForm from './pages/AdopcionForm';
 
 import Login from './pages/admin/Login';
 import PanelControl from './pages/admin/PanelControl';
+
 import MenuAdopciones from './pages/admin/adopciones/MenuAdopciones';
 import AltaAdopcion from './pages/admin/Adopciones/AltaAdopcion';
 import ModificarAdopcion from './pages/admin/Adopciones/ModificarAdopcion';
 import BajaAdopcion from './pages/admin/Adopciones/BajaAdopcion';
+
 import MenuNoticias from './pages/admin/Noticias/MenuNoticias';
 import AltaNoticia from './pages/admin/Noticias/AltaNoticia';
 import ModificarNoticia from './pages/admin/Noticias/ModificarNoticia';
 import BajaNoticia from './pages/admin/Noticias/BajaNoticia';
 
+import MenuHistorias from './pages/admin/Historias/MenuHistorias';
+import AltaHistoria from './pages/admin/Historias/AltaHistoria';
+import ModificarHistoria from './pages/admin/Historias/ModificarHistoria';
+import BajaHistoria from './pages/admin/Historias/BajaHistoria';
+
+import CambiarContrasenia from './pages/admin/Contrasenia/CambiarContrasenia';
+
 function App() {
   const location = useLocation();
   
-  // Verificamos si estamos en la página de login o en el panel admin para ocultar Header y Footer
+  // Verifica si estamos en la página de login o en el panel admin para ocultar Header y Footer
   const isHiddenPage = location.pathname === '/login' || 
-                      location.pathname === '/admin/panel' ||
+                      location.pathname === '/admin' ||
                       location.pathname === '/admin/adopciones' ||
                       location.pathname === '/admin/adopciones/alta' ||
                       location.pathname === '/admin/adopciones/modificar' ||
@@ -37,7 +46,12 @@ function App() {
                       location.pathname === '/admin/noticias' ||
                       location.pathname === '/admin/noticias/alta' ||
                       location.pathname === '/admin/noticias/modificar' ||
-                      location.pathname === '/admin/noticias/baja';
+                      location.pathname === '/admin/noticias/baja' ||
+                      location.pathname === '/admin/historias' ||
+                      location.pathname === '/admin/historias/alta' ||
+                      location.pathname === '/admin/historias/modificar'||
+                      location.pathname === '/admin/historias/baja' ||
+                      location.pathname === '/admin/cambiarcontrasenia';
 
   return (
     <>
@@ -64,7 +78,7 @@ function App() {
 
           {/* RUTA DEL ADMIN */}
           <Route path="/login" element={<Login />} />
-          <Route path="/admin/panel" element={<PanelControl />} />
+          <Route path="/admin" element={<PanelControl />} />
           <Route path="/admin/adopciones" element={<MenuAdopciones />} />
           <Route path="/admin/adopciones/alta" element={<AltaAdopcion />} />
           <Route path="/admin/adopciones/modificar" element={<ModificarAdopcion />} />
@@ -73,6 +87,11 @@ function App() {
           <Route path="/admin/noticias/alta" element={<AltaNoticia />} />
           <Route path="/admin/noticias/modificar" element={<ModificarNoticia />} />
           <Route path="/admin/noticias/baja" element={<BajaNoticia />} />
+          <Route path="/admin/historias" element={<MenuHistorias />} />
+          <Route path="/admin/historias/alta" element={<AltaHistoria />} />
+          <Route path="/admin/historias/modificar" element={<ModificarHistoria />} />
+          <Route path="/admin/historias/baja" element={<BajaHistoria />} />
+          <Route path="/admin/cambiarcontrasenia" element={<CambiarContrasenia />} />
         </Routes>
       </main>
 

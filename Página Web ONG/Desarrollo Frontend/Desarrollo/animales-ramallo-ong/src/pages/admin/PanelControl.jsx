@@ -33,7 +33,7 @@ const PanelControl = () => {
           </Link>
 
           {/* Botón 5: Cambiar Contraseña */}
-          <Link to="/admin/password" className="panel-card">
+          <Link to="/admin/cambiarcontrasenia" className="panel-card">
             <span className="panel-card-text">Cambiar<br/>contraseña</span>
           </Link>
 

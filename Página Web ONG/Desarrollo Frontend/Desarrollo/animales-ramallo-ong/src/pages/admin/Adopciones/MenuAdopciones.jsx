@@ -29,7 +29,7 @@ const MenuAdopciones = () => {
           </Link>
 
           {/* Tarjeta Extra: Volver al Panel Principal */}
-          <Link to="/admin/panel" className="panel-card-salir">
+          <Link to="/admin" className="panel-card-salir">
             <span className="panel-card-salir-text">Volver al<br/>Panel</span>
           </Link>
 
