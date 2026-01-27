@@ -96,7 +96,7 @@ const CambiarContrasenia = () => {
             
             {/* Link Volver */}
             <div style={{marginTop: '30px'}}>
-               <Link to="/admin/panel" style={{color: '#666', textDecoration: 'underline'}}>
+               <Link to="/admin" style={{color: '#666', textDecoration: 'underline'}}>
                  Volver al Panel
                </Link>
             </div>
